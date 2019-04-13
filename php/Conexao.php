@@ -10,7 +10,7 @@ class Conexao {
  
     public static function getInstance() {
         if (!isset(self::$instance)) {
-            self::$instance = new PDO('mysql:host=localhost;dbname=id9282948_scc', 'root', '123456');
+            self::$instance = new PDO('mysql:host=localhost;dbname=id9282948_scc', 'id9282948_root', '123456');
         }
  
         return self::$instance;
