@@ -3,9 +3,8 @@
     <head>
         <title>SCC</title>
         <meta charset="UTF-8">
-        <link href="../CSS/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
-        <link rel="stylesheet" type="text/css" href="../CSS/tela_login.css" media="screen" />
-        <script src="../JavaScript/bootstrap.js"></script>
+        <link href="../css/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
+        <link rel="stylesheet" type="text/css" href="../css/tela_login.css" media="screen" />
     </head>
    
 <body>
@@ -34,6 +33,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/bootstrap.js"></script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 			echo $user->nome;
 			session_start();
 			$_SESSION['autenticado'] = true;
-			$_SESSION['user_id'] = $user->getId(); 
+			$_SESSION['id'] = $user->getId(); 
 		} else {
 			echo "Usuário desativado";
 		}
@@ -23,7 +23,7 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 		echo "Usuário não existe";
 	}
 } else {
-	header("Location: ../Paginas/index.html");
+	header("Location: ../paginas/index.html");
 }
 
 
