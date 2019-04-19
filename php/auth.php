@@ -15,7 +15,12 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 			echo $user->nome;
 			session_start();
 			$_SESSION['autenticado'] = true;
-			$_SESSION['id'] = $user->getId(); 
+			$_SESSION['id'] = $user->getId();
+			if($user->login == "admin"){
+				header("Location: ../paginas/admin/home.php");
+			} else {
+				header("Location: ../paginas/analista/home.php");
+			}
 		} else {
 			echo "Usuário desativado";
 		}
