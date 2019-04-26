@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'UsuarioDAO.php';
 
 /*Autenticação de login*/
@@ -13,7 +14,6 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 		if($user->status == 'ativo'){
 			echo "logado ";
 			echo $user->nome;
-			session_start();
 			$_SESSION['auth'] = 'true';
 			$_SESSION['id'] = $user->getId();
 			if($user->login == "admin"){
