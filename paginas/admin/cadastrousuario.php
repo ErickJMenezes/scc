@@ -3,8 +3,8 @@
     <head>
         <title>SCC</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../../CSS/estilo.css" media="screen" />
-        <link href="../../CSS/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
+        <link rel="stylesheet" type="text/css" href="../../css/estilo.css" media="screen" />
+        <link href="../../css/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
     </head>
    
 <body>

@@ -4,7 +4,7 @@
         <title>SCC</title>
         <meta charset="UTF-8">
         
-        <link rel="stylesheet" type="text/css" href="../../CSS/estilo.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/estilo.css" media="screen" />
     </head>
    
 <body>
