@@ -2,7 +2,7 @@
 
 session_start();
 
-if($_SESSION['autenticado'] == 'true'){
+if($_SESSION['auth'] == 'true'){
     
     if(isset($_GET['nome']) && isset($_GET['login']) && isset($_GET['senha']) && isset($_GET['status'])){
         
