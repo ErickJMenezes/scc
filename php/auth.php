@@ -14,7 +14,7 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 			echo "logado ";
 			echo $user->nome;
 			session_start();
-			$_SESSION['autenticado'] = true;
+			$_SESSION['autenticado'] = 'true';
 			$_SESSION['id'] = $user->getId();
 			if($user->login == "admin"){
 				header("Location: ../paginas/admin/home.php");
