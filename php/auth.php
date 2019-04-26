@@ -12,8 +12,6 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
 	if(!is_null($user)){
 		if($user->status == 'ativo'){
-			echo "logado ";
-			echo $user->nome;
 			$_SESSION['auth'] = 'true';
 			$_SESSION['id'] = $user->getId();
 			if($user->login == "admin"){
