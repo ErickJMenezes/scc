@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['auth'] == 'true'){
     
-    if(isset($_GET['nome']) && isset($_GET['login']) && isset($_GET['senha']) && isset($_GET['status'])){
+    if(isset($_GET['nome']) && isset($_GET['login']) && isset($_GET['senha']) && isset($_GET['status']) && isset($_GET['email']) && isset($_GET['cargo'])){
         
         include "UsuarioDAO.php";
 
@@ -17,14 +17,14 @@ if($_SESSION['auth'] == 'true'){
 
         $resultado = UsuarioDAO::create($nome, $login, $senha, $email, $status, $cargo); 
         if($resultado == 1){
-            echo 'Usuario cadastrado com sucesso!';
+            echo '<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>';
         } else {
-            echo 'Erro ao cadastrar usuario';
+            echo '<div class="alert alert-danger" role="alert">Erro ao cadastrar usuário!</div>';
         }
         
         
     } else {
-        echo 'Por favor, preencha os campos obrigatórios';
+        echo '<div class="alert alert-warning" role="alert">Por favor, preencha os campos obrigatórios.</div>';
     }
     
     
