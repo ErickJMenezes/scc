@@ -69,7 +69,9 @@
                         $('#retornoformulario').html(data);
                     } 
                 });
-
+                
+                document.getElementById("myForm").reset();
+                window.location.href="#novo_usuario";
             });
             
             
