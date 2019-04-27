@@ -18,7 +18,7 @@
                             <h3 class="text-center text-info">ADM Home</h3>
                             <div class="form-group">
                                 <ul>
-                                    <li><a href="cadastrousuario.html">Cadastrar Novo Usuário</a></li>
+                                    <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
                                     <li><a href="#">Cadastrar Novo Ativo</a></li>
                                     <li><a href="#">Gerenciar Chamados</a></li>
                                 </ul>
