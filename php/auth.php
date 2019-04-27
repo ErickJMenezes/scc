@@ -14,9 +14,9 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 		if($user->status == 'ativo'){
 			$_SESSION['auth'] = 'true';
 			$_SESSION['id'] = $user->getId();
-			if($user->login == "admin"){
+			if($user->cargo == "administrador"){
 				header("Location: ../paginas/admin/home.php");
-			} else {
+			} else if($user->cargo == 'analista'){
 				header("Location: ../paginas/analista/home.php");
 			}
 		} else {

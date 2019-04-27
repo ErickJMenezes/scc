@@ -37,15 +37,21 @@
                                     <input type="password" id="senha" required name="senha" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="cargo" class="text-info">Cargo:</label>      
-                                    <input type="text" id="cargo" required name="cargo" class="form-control"/>  
+                                    <label for="cargo" class="text-info">Cargo: </label>
+                                    <label for="cargo" class="text-info">Analista</label> 
+                                    <input type="radio" id="cargo" value="analista" required name="cargo"/>
+                                    <label for="cargo" class="text-info">Administrador</label>
+                                    <input type="radio" id="cargo" value="administrador" required name="cargo"/>  
                                     <br/>    
                                     <br/>
-                                    <label for="status" class="text-info">status (ativo ou inativo):</label>      
-                                    <input type="text" id="status" required name="status" class="form-control"/>  
+                                    <label for="status" class="text-info">Status: </label>
+                                    <label for="status" class="text-info">Ativo</label> 
+                                    <input type="radio" id="status" value="ativo" required name="status"/>
+                                    <label for="status" class="text-info">Inativo</label>
+                                    <input type="radio" id="status" value="inativo" required name="status"/>  
                                     <br/>    
                                     <br/>
-                                    <input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Cadastrar"/>
+                                    <a href="#novo_usuario" style="text-decoration: none;"><input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Cadastrar"/></a>
                                 </form>
                             </div>
                         </div>
@@ -71,7 +77,6 @@
                 });
                 
                 document.getElementById("myForm").reset();
-                window.location.href="#novo_usuario";
             });
             
             
