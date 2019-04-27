@@ -1,3 +1,22 @@
+<?php
+session_start();
+/*
+    Verifica se ja existe usuário logado, caso sim verifica o cargo e redireciona para a pagina correta.
+    */
+    if(isset($_SESSION['auth'])){
+        if($_SESSION['auth'] == 'true'){
+            include '../../php/UsuarioDAO.php';
+            $usuario = new UsuarioDAO($_SESSION['id']);
+            if($usuario->cargo == 'administrador'){
+                
+            } else if($usuario->cargo == 'analista'){
+                header('Location: ../analista/home.php');
+            }
+        } else {
+            header('Location: ../index.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,6 +71,7 @@
                                     <br/>    
                                     <br/>
                                     <a href="#novo_usuario" style="text-decoration: none;"><input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Cadastrar"/></a>
+                                    <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>
                         </div>

@@ -1,3 +1,20 @@
+<?php
+session_start();
+/*
+    Verifica se ja existe usuário logado, caso sim verifica o cargo e redireciona para a pagina correta.
+    */
+    if(isset($_SESSION['auth'])){
+        if($_SESSION['auth'] == 'true'){
+            include '../php/UsuarioDAO.php';
+            $usuario = new UsuarioDAO($_SESSION['id']);
+            if($usuario->cargo == 'administrador'){
+                header('Location: admin/home.php');
+            } else if($usuario->cargo == 'analista'){
+                header('Location: analista/home.php');
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +23,6 @@
         <link href="../css/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
         <link rel="stylesheet" type="text/css" href="../css/tela_login.css" media="screen" />
     </head>
-   
 <body>
     <div id="login">
         <h3 class="text-center text-white pt-5">Sistema de Controle de Chamados</h3>
@@ -15,6 +31,7 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="../php/auth.php" method="post">
+                            <div id="retornoformulario"></div>
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Usuário:</label><br>
@@ -25,7 +42,7 @@
                                 <input type="password" id="senha" class="form-control" required name="senha">
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="login" class="btn btn-info btn-md" value="login">
+                                <input type="submit" id="submit" name="login" class="btn btn-info btn-md" value="login">
                             </div>
                         </form>
                     </div>
@@ -34,6 +51,10 @@
         </div>
     </div>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script>
+    
+    </script>
 </body>
 
 </html>
