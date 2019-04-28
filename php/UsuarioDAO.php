@@ -50,6 +50,11 @@ class UsuarioDAO {
 		$sql = "UPDATE `usuario` SET nome = :nome, cargo = :cargo, status = :status, email = :email, senha = :senha, login = :login WHERE id = :id";
 
 		$stmt = $conexao->prepare($sql);
+        /*
+            Verifica se a senha foi alterada.
+            Caso sim, gera o md5 da nova senha e binda,
+            caso contrário binda a senha atual.
+        */
 		if($this->senha == $this->senhaOld){
 			$stmt->bindParam(':senha', $this->senhaOld);
 		} else {
