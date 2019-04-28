@@ -6,7 +6,7 @@ if($_SESSION['auth'] == 'true'){
     
     if(isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['status']) && isset($_POST['email']) && isset($_POST['cargo'])){
         
-        include "UsuarioDAO.php";
+        include "lib/UsuarioDAO.php";
 
         $nome = $_POST['nome'];
         $login = $_POST['login'];

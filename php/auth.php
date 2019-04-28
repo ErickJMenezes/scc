@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'UsuarioDAO.php';
+include 'lib/UsuarioDAO.php';
 
 /*Autenticação de login*/
 
