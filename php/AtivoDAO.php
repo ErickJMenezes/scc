@@ -10,12 +10,12 @@ class AtivoDAO {
     public $tombo;
     public $status;
     
-    public function __construct($id){
-        $sql = 'SELECT * FROM `ativo` WHERE id = :id;';
+    public function __construct($tombo){
+        $sql = 'SELECT * FROM `ativo` WHERE id = :tombo;';
         $conexao = Conexao::getInstance();
         
         $stm = $conexao->prepare($sql);
-        $stm->bindParam(':id', $id);
+        $stm->bindParam(':tombo', $tombo);
         $ret = $stm->execute();
         
         $usr = $stm->fetchAll(PDO::FETCH_ASSOC);
