@@ -10,12 +10,12 @@ class AtivoDAO {
     public $tombo;
     public $status;
     
-    public function __construct($tombo){
-        $sql = 'SELECT * FROM `ativo` WHERE id = :tombo;';
+    public function __construct($id){
+        $sql = 'SELECT * FROM `ativo` WHERE id = :id;';
         $conexao = Conexao::getInstance();
         
         $stm = $conexao->prepare($sql);
-        $stm->bindParam(':tombo', $tombo);
+        $stm->bindParam(':id', $id);
         $ret = $stm->execute();
         
         $usr = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ class AtivoDAO {
         
         $ret = $stm->execute();
         
-        if($ret){
+        if($ret == 1){
             return 1;
         } else {
             return -1;
@@ -59,11 +59,38 @@ class AtivoDAO {
         $stm->bindParam(':status', $status);
         $ret = $stm->execute();
         
-        if($ret){
+        if($ret == 1){
             return 1;
         } else {
             return -1;
         }
     }
+    
+    public static function getIdPeloTombo($tombo){
+        $sql = 'SELECT `id` FROM `ativo` WHERE tombo = :tombo;';
+        $conexao = Conexao::getInstance();
+        $stm = $conexao->prepare($sql);
+        $stm->bindParam(':tombo', $tombo);
+        $ret = $stm->execute();
+        if($ret == 1){
+            $ativo = $stm->fetchAll(PDO::FETCH_ASSOC);
+            return $ativo[0]['id'];
+        } else {
+            return -1;
+        }
+    }
+    
+    public static function getAtivoPeloTombo($tombo){
+        
+        $ret = AtivoDAO::getIdPeloTombo($tombo);
+        
+        if($ret != -1){
+            return new AtivoDAO($ret);
+        } else {
+            return -1;
+        }
+    }
+    
+    
     
 }
