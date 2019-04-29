@@ -31,7 +31,6 @@ session_start();
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="../php/auth.php" method="post">
-                            <div id="retornoformulario"></div>
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Usuário:</label><br>
@@ -44,6 +43,20 @@ session_start();
                             <div class="form-group">
                                 <input type="submit" id="submit" name="login" class="btn btn-info btn-md" value="login">
                             </div>
+                            <div class="form-group" id="retornoformulario">
+                                <?php
+                                    if(isset($_GET['e'])){
+
+                                        if($_GET['e'] == '1'){
+                                            echo '<div id="alertmessage" class="alert alert-danger" role="alert">Usuário desativado</div>';
+                                        }else if($_GET['e'] == '2'){
+                                            echo '<div id="alertmessage" class="alert alert-danger" role="alert">Usuário não existe</div>';
+                                        }else if($_GET['e'] == '3'){
+                                            echo '<div id="alertmessage" class="alert alert-danger" role="alert">Preencha todos os campos</div>';
+                                        }   
+                                    }
+                                ?>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -52,9 +65,6 @@ session_start();
     </div>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/jquery.js"></script>
-    <script>
-    
-    </script>
 </body>
 
 </html>

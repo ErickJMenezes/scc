@@ -20,13 +20,13 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 				header("Location: ../paginas/analista/home.php");
 			}
 		} else {
-			echo '<div class="alert alert-danger" role="alert">Usuário desativado</div>';
+            header('Location: ../paginas/index.php?e=1');
 		}
 	} else {
-		'<div class="alert alert-danger" role="alert">Usuário não existe</div>';
+        header('Location: ../paginas/index.php?e=2');
 	}
 } else {
-	header("Location: ../paginas/index.html");
+	header("Location: ../paginas/index.php?e=3");
 }
 
 

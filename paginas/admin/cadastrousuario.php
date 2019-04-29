@@ -93,10 +93,10 @@ session_start();
                     data: $('#novo_usuario').serialize() ,
                     success: function(data){
                         $('#retornoformulario').html(data);
+                        document.getElementById("novo_usuario").reset();
                     } 
                 });
                 
-                document.getElementById("myForm").reset();
             });
             
             
