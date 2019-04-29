@@ -38,8 +38,9 @@ session_start();
                             <div class="form-group">
                                 <ul>
                                     <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
+                                    <li><a href="#">Editar usuario</a></li>
                                     <li><a href="#">Cadastrar Novo Ativo</a></li>
-                                    <li><a href="#">Gerenciar Chamados</a></li>
+                                    <li><a href="#">Editar ativo</a></li>
                                     <form >
                                       <input type="hidden" id="sair" name="sair" value="1">
                                       <input type="submit" value="Sair">
