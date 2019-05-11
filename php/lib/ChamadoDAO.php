@@ -49,6 +49,9 @@ class ChamadoDAO {
         
     }
     
+    /**
+    * Retorna -1 caso dê falha, e 1 caso sucesso.
+    */
     public static function create($nome, $status, $requerente, $id_usuario, $tombo_ativo){
         $sql = 'INSERT INTO `chamado` (nome, status, requerente, usuario_atribuido, ativo_linkado) VALUES (:nome, :status, :requerente, :usuario_atribuido, :ativo_linkado);';
         $conexao = Conexao::getInstance();

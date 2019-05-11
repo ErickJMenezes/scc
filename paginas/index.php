@@ -53,7 +53,9 @@ session_start();
                                             echo '<div id="alertmessage" class="alert alert-danger" role="alert">Usuário não existe</div>';
                                         }else if($_GET['e'] == '3'){
                                             echo '<div id="alertmessage" class="alert alert-danger" role="alert">Preencha todos os campos</div>';
-                                        }   
+                                        }else if ($_GET['e'] == '4'){
+                                            echo '<div id="alertmessage" class="alert alert-danger" role="alert">Por favor, autentique-se.</div>';
+                                        }
                                     }
                                 ?>
                             </div>
