@@ -36,12 +36,22 @@ session_start();
            Bem vindo <span class="badge badge-light"><?php echo $usuario->nome ?></span>
           <span class="sr-only">Nome</span>
         </button>
-        <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="../../php/pesquisatombo.php" method="post">
+        <?php
+            if(isset($_GET['e'])){
+
+                if($_GET['e'] == '1'){
+                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:left; margin-left:300px; top:5px; text-align:center;">Ativo inexistente</div>';
+                }else if($_GET['e'] == '2'){
+                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:left; margin-left:300px; top:5px; text-align:center;">Ativo Desativado</div>';
+                }
+            }
+        ?>
+        <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="../../php/pesquisatombo.php" method="POST">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
             </div>
-            <input type="text" class="form-control" placeholder="Tombo" aria-label="" aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" name="tombo" placeholder="Tombo" aria-label="" aria-describedby="basic-addon1" required>
           </div>
         </form>
       </div>
@@ -64,16 +74,17 @@ session_start();
           include_once '../../php/lib/ChamadoDAO.php';
           $chamados = ChamadoDAO::getAllForUser($usuario->getId());
 
-          for($i = 0; $i < $chamados['size']; $i++){
+
+          for($i = 0; $i < sizeof($chamados); $i++){
             echo "<tr>";
-            echo "<td>"+$chamados['result'][$i]['id']+"</td>";
-            echo "<td>"+$chamados['result'][$i]['nome']+"</td>";
-            echo "<td>"+$chamados['result'][$i]['requerente']+"</td>";
-            echo "<td>"+$usuario->nome+"</td>";
-            echo "<td>"+$chamados['result'][$i]['status']+"</td>";
-            echo "<td>"+$chamados['result'][$i]['data_abertura']+"</td>";
-            echo "<td>"+$chamados['result'][$i]['ativo_linkado']+"</td>";
-            echo "<td>"+"edit"+"</td>";
+              echo "<td>".$chamados[$i]['id']."</td>";
+              echo "<td>".$chamados[$i]['nome']."</td>";
+              echo "<td>".$chamados[$i]['requerente']."</td>";
+              echo "<td>".$usuario->nome."</td>";
+              echo "<td>".$chamados[$i]['status']."</td>";
+              echo "<td>".$chamados[$i]['data_abertura']."</td>";
+              echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
+              echo "<td>"."edit"."</td>";
             echo "</tr>";
           }
 

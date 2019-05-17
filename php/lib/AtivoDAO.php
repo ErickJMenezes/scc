@@ -74,7 +74,11 @@ class AtivoDAO {
         $ret = $stm->execute();
         if($ret == 1){
             $ativo = $stm->fetchAll(PDO::FETCH_ASSOC);
-            return $ativo[0]['id'];
+            if(sizeof($ativo)>0){
+                return $ativo[0]['id'];
+            } else {
+              return -1;
+            }
         } else {
             return -1;
         }

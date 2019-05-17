@@ -82,14 +82,13 @@ class ChamadoDAO {
     }
 
     public static function getAllForUser($id){
-      $sql = 'SELECT * FROM `chamado` WHERE `usuario_atribuido` = :usuario;';
+      $sql = "SELECT * FROM `chamado` WHERE `usuario_atribuido` = :id;";
       $con = Conexao::getInstance();
       $stm = $con->prepare($sql);
-      $stm->bindParam(':usuario', $id);
+      $stm->bindParam(':id', $id);
       $ret = $stm->execute();
-
-      if($ret == 0){
-        return ['size' => $stm->rowCount(),'result'=>$stm->fetchAll(PDO::FETCH_ASSOC)];
+      if($ret == 1){
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
       } else {
         return -1;
       }

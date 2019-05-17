@@ -5,7 +5,7 @@ session_start();
     */
     if(isset($_SESSION['auth'])){
         if($_SESSION['auth'] == 'true'){
-            include '../php/lib/UsuarioDAO.php';
+            include_once '../php/lib/UsuarioDAO.php';
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
                 header('Location: admin/home.php');
