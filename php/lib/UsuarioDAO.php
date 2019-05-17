@@ -1,11 +1,11 @@
 <?php
 
-include 'Conexao.php';
+include_once 'Conexao.php';
 
 /**
 *	Classe que representa a tabela de "usuario" do banco de dados.
 *	Também pode ser usada para autenticar um usuário pelo login e senha ou criar um novo usuário.
-*	
+*
 *	@author ErickM
 */
 class UsuarioDAO {

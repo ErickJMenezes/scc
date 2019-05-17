@@ -1,4 +1,4 @@
-<!--
+
 <?php
 session_start();
   /*
@@ -6,7 +6,7 @@ session_start();
     */
     if(isset($_SESSION['auth'])){
         if($_SESSION['auth'] == 'true'){ //verifica se o usuário está autenticado
-            include '../../php/lib/UsuarioDAO.php';
+            include_once '../../php/lib/UsuarioDAO.php';
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
               //Manda para a home da sua página
@@ -19,7 +19,6 @@ session_start();
         }
     }
 ?>
--->
 
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
@@ -30,7 +29,68 @@ session_start();
     <link rel="stylesheet" href="../../css/estilo.css" media="screen">
   </head>
   <body>
-    <div id="pg_analista">
+    <div id="principal">
+
+      <div id="barrapesquisa">
+        <button type="button" class="btn btn-primary barra-pesquisa-alinhar" id="nomeusuario">
+           Bem vindo <span class="badge badge-light"><?php echo $usuario->nome ?></span>
+          <span class="sr-only">Nome</span>
+        </button>
+        <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="../../php/pesquisatombo.php" method="post">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+            </div>
+            <input type="text" class="form-control" placeholder="Tombo" aria-label="" aria-describedby="basic-addon1" required>
+          </div>
+        </form>
+      </div>
+
+      <div id="lista-chamados">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>título</th>
+              <th>Requerente</th>
+              <th>Atribuido para</th>
+              <th>Status</th>
+              <th>Criado em</th>
+              <th>Ativo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <?php
+          include_once '../../php/lib/ChamadoDAO.php';
+          $chamados = ChamadoDAO::getAllForUser($usuario->getId());
+
+          for($i = 0; $i < $chamados['size']; $i++){
+            echo "<tr>";
+            echo "<td>"+$chamados['result'][$i]['id']+"</td>";
+            echo "<td>"+$chamados['result'][$i]['nome']+"</td>";
+            echo "<td>"+$chamados['result'][$i]['requerente']+"</td>";
+            echo "<td>"+$usuario->nome+"</td>";
+            echo "<td>"+$chamados['result'][$i]['status']+"</td>";
+            echo "<td>"+$chamados['result'][$i]['data_abertura']+"</td>";
+            echo "<td>"+$chamados['result'][$i]['ativo_linkado']+"</td>";
+            echo "<td>"+"edit"+"</td>";
+            echo "</tr>";
+          }
+
+           ?>
+        </table>
+      </div>
+
+      <div id="home-opcoes">
+        <div id="menu">
+          Menu
+        </div>
+
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="../../php/logout.php" role="button">Sair</a>
+        </p>
+
+      </div>
 
     </div>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>

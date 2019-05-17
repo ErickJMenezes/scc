@@ -1,9 +1,8 @@
 <?php
-session_start();
 
-include 'Conexao.php';
-include 'UsuarioDAO.php';
-include 'AtivoDAO.php';
+include_once 'Conexao.php';
+include_once 'UsuarioDAO.php';
+include_once 'AtivoDAO.php';
 
 class ChamadoDAO {
 
@@ -82,6 +81,18 @@ class ChamadoDAO {
         }
     }
 
+    public static function getAllForUser($id){
+      $sql = 'SELECT * FROM `chamado` WHERE `usuario_atribuido` = :usuario;';
+      $con = Conexao::getInstance();
+      $stm = $con->prepare($sql);
+      $stm->bindParam(':usuario', $id);
+      $ret = $stm->execute();
 
+      if($ret == 0){
+        return ['size' => $stm->rowCount(),'result'=>$stm->fetchAll(PDO::FETCH_ASSOC)];
+      } else {
+        return -1;
+      }
+    }
 
 }

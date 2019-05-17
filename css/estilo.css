@@ -46,11 +46,83 @@ ul li:last-child {
   border-bottom: none
 }
 
-#pg_analista {
+#principal {
   position: relative;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  width: 300px;
+  width: 1000px;
   height: 600px;
+  max-height: none;
+  display: block;
+  background-color: #EAEAEA;
+}
+
+#barrapesquisa {
+  position: relative;
+  margin: 0px;
+  border: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #aaa;
+  top: 0px;
+  width: 1000px;
+  height: 60px;
+  display: inline-block;
+
+}
+
+#nomeusuario {
+  float: left;
+}
+
+#pesquisatombo{
+  float: right;
+  margin-right: 30px;
+}
+
+.barra-pesquisa-alinhar {
+  top: 10px;
+  left: 10px;
+  position: relative;
+}
+
+#lista-chamados{
+  border-radius: 10px;
+  position: relative;
+  margin: 0px;
+  width: 750px;
+  max-height: none;
+  float: left;
+}
+
+#home-opcoes {
+  border-radius: 10px;
+  position: relative;
+  margin: 0px;
+  width: 230px;
+  float: right;
+  height: 400px;
+  background: rgba(222,222,222,1);
+  margin-right: 10px;
+  text-align: center;
+}
+
+#home-opcoes #menu {
+  position: relative;
+  margin: 0px;
+  width: 230px;
+  height: 50px;
+  top: 0px;
+  background: #aaa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  font-size: 22pt;
+}
+
+#home-opcoes p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }
