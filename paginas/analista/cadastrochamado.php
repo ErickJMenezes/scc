@@ -8,9 +8,9 @@ session_start();
             include_once '../../php/lib/UsuarioDAO.php';
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
-
+              header('Location: ../admin/home.php');
             } else if($usuario->cargo == 'analista'){
-                header('Location: ../analista/home.php');
+
             }
         } else {
             header('Location: ../index.php');
