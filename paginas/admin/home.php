@@ -40,7 +40,7 @@ session_start();
                                 <ul>
                                     <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
                                     <li><a href="#">Editar usuario</a></li>
-                                    <li><a href="#">Cadastrar Novo Ativo</a></li>
+                                    <li><a href="cadastroativo.php">Cadastrar Novo Ativo</a></li>
                                     <li><a href="#">Editar ativo</a></li>
                                     <form >
                                       <input type="hidden" id="sair" name="sair" value="1">
