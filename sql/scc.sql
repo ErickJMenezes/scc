@@ -100,3 +100,5 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `usuario` (`nome`, `login`, `senha`, `email`, `cargo`, `status`) VALUES ("Administrador", "admin", md5("admin"), "admin@scc.com", "administrador", "ativo");

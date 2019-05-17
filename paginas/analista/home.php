@@ -1,6 +1,7 @@
+<!--
 <?php
 session_start();
-/*
+  /*
     Verifica se ja existe usuário logado, caso sim verifica o cargo e redireciona para a pagina correta.
     */
     if(isset($_SESSION['auth'])){
@@ -18,6 +19,8 @@ session_start();
         }
     }
 ?>
+-->
+
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
   <head>
@@ -27,7 +30,9 @@ session_start();
     <link rel="stylesheet" href="../../css/estilo.css" media="screen">
   </head>
   <body>
+    <div id="pg_analista">
 
+    </div>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
   </body>
