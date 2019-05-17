@@ -56,7 +56,7 @@ session_start();
       </div>
 
       <div id="lista-chamados">
-        <table class="table">
+        <table class="table table-bordered table-hover" style="text-align:center;">
           <thead class="thead-dark">
             <tr>
               <th>ID</th>
@@ -69,24 +69,27 @@ session_start();
               <th></th>
             </tr>
           </thead>
-          <?php
-          include_once '../../php/lib/ChamadoDAO.php';
-          $chamados = ChamadoDAO::getAllForUser($usuario->getId());
+          <tbody>
 
-          for($i = 0; $i < sizeof($chamados); $i++){
-            echo "<tr>";
-              echo "<td>".$chamados[$i]['id']."</td>";
-              echo "<td>".$chamados[$i]['nome']."</td>";
-              echo "<td>".$chamados[$i]['requerente']."</td>";
-              echo "<td>".$usuario->nome."</td>";
-              echo "<td>".$chamados[$i]['status']."</td>";
-              echo "<td>".$chamados[$i]['data_abertura']."</td>";
-              echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
-              echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."'><span class='glyphicon glyphicon-pencil'></span>Editar</a>"."</td>";
-            echo "</tr>";
-          }
+            <?php
+            include_once '../../php/lib/ChamadoDAO.php';
+            $chamados = ChamadoDAO::getAllForUser($usuario->getId());
 
-           ?>
+            for($i = 0; $i < sizeof($chamados); $i++){
+              echo "<tr>";
+                echo "<td>".$chamados[$i]['id']."</td>";
+                echo "<td>".$chamados[$i]['nome']."</td>";
+                echo "<td>".$chamados[$i]['requerente']."</td>";
+                echo "<td>".$usuario->nome."</td>";
+                echo "<td>".$chamados[$i]['status']."</td>";
+                echo "<td>".$chamados[$i]['data_abertura']."</td>";
+                echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
+                echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Editar</a>"."</td>";
+              echo "</tr>";
+            }
+
+             ?>
+           </tbody>
         </table>
       </div>
 
@@ -94,9 +97,19 @@ session_start();
         <div id="menu">
           Menu
         </div>
-
+        <style media="screen">
+          .menuitemajuste {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            display: block;
+          }
+        </style>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="../../php/logout.php" role="button">Sair</a>
+          <a class="btn btn-primary btn-lg menuitemajuste" href="../../php/logout.php" role="button">Abrir chamado</a>
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg menuitemajuste" href="../../php/logout.php" role="button">Sair</a>
         </p>
 
       </div>
