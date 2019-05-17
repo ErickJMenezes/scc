@@ -73,7 +73,6 @@ session_start();
           include_once '../../php/lib/ChamadoDAO.php';
           $chamados = ChamadoDAO::getAllForUser($usuario->getId());
 
-
           for($i = 0; $i < sizeof($chamados); $i++){
             echo "<tr>";
               echo "<td>".$chamados[$i]['id']."</td>";
@@ -83,7 +82,7 @@ session_start();
               echo "<td>".$chamados[$i]['status']."</td>";
               echo "<td>".$chamados[$i]['data_abertura']."</td>";
               echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
-              echo "<td>"."edit"."</td>";
+              echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."'><span class='glyphicon glyphicon-pencil'></span>Editar</a>"."</td>";
             echo "</tr>";
           }
 
