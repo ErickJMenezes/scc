@@ -35,26 +35,28 @@ session_start();
                         <div id="login-form" class="form">
                             <h3 class="text-center text-info">Abrir Chamado</h3>
                             <div class="form-group">
-                                <form id="novo_usuario" class="form" method="POST">
+                                <form id="novo_chamado" class="form" method="POST">
                                     <h3 class="text-center text-info">Insira os dados abaixo:</h3>
                                     <br/>
                                     <div id="retornoformulario"></div>
                                     <br/>
-                                    <label for="id" class="text-info">Título:</label>
-                                    <input type="text" id="id" required name="login" class="form-control"/>
+                                    <label for="titulo" class="text-info">Título:</label>
+                                    <input type="text" id="id" required name="titulo" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="nome" class="text-info">Descrição:</label>
-                                    <input type="text" id="nome" required name="nome" class="form-control"/>
+                                    <label for="descricao" class="text-info">Descrição:</label>
+                                    <input type="text" id="nome" required name="descricao" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="email" class="text-info">Nome do requerente:</label>
-                                    <input type="email" id="email" required name="email" class="form-control"/>
+                                    <label for="requerente" class="text-info">Nome do requerente:</label>
+                                    <input type="text" id="requerente" required name="requerente" class="form-control"/>
                                     <br/>
                                     <br/>
+                                    <!--Preencher com o nome do funcionário-->
                                     <label for="funcionario" class="text-info">Funcionário atribuído:</label>
                                     <br/>
                                     <br/>
+                                    <!--Preencher com o ativo-->
                                     <label for="ativo" class="text-info">Ativo: </label>
                                     <br/>
                                     <br/>
@@ -65,7 +67,7 @@ session_start();
                                     <input type="radio" id="status" value="fechado" required name="status"/>
                                     <br/>
                                     <br/>
-                                    <a href="#novo_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Abrir Chamado"/></a>
+                                    <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Abrir Chamado"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>

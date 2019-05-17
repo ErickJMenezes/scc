@@ -106,7 +106,7 @@ session_start();
           }
         </style>
         <p class="lead">
-          <a class="btn btn-primary btn-lg menuitemajuste" href="../../php/logout.php" role="button">Abrir Chamado</a>
+          <a class="btn btn-primary btn-lg menuitemajuste" href="cadastrochamado.php" role="button">Abrir Chamado</a>
         </p>
         <p class="lead">
           <a class="btn btn-primary btn-lg menuitemajuste" href="../../php/logout.php" role="button">Sair</a>
