@@ -53,6 +53,7 @@ ul li:last-child {
   border-radius: 10px;
   width: 1000px;
   height: auto;
+  min-height: 600px;
   display: block;
   background-color: #EAEAEA;
 }

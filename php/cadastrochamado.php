@@ -1,5 +1,4 @@
 <?php
-#Inicio da seção
 session_start();
 
 include 'lib/UsuarioDAO.php';
