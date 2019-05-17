@@ -40,9 +40,9 @@ session_start();
             if(isset($_GET['e'])){
 
                 if($_GET['e'] == '1'){
-                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:left; margin-left:300px; top:5px; text-align:center;">Ativo inexistente</div>';
+                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:right; margin:0px; margin-right:10px; top:5px; text-align:center;">Ativo inexistente</div>';
                 }else if($_GET['e'] == '2'){
-                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:left; margin-left:300px; top:5px; text-align:center;">Ativo Desativado</div>';
+                    echo '<div id="alertmessage" class="alert alert-danger" role="alert" style="width:200px;  height:50px; postion:relative; float:right; margin-left:0px; margin-right:10px; top:5px; text-align:center;">Ativo Desativado.</div>';
                 }
             }
         ?>

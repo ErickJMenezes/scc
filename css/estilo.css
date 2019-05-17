@@ -52,8 +52,7 @@ ul li:last-child {
   margin-right: auto;
   border-radius: 10px;
   width: 1000px;
-  height: 600px;
-  max-height: none;
+  height: auto;
   display: block;
   background-color: #EAEAEA;
 }
@@ -92,7 +91,6 @@ ul li:last-child {
   position: relative;
   margin: 0px;
   width: 750px;
-  max-height: none;
   float: left;
 }
 
