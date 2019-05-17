@@ -8,7 +8,7 @@ session_start();
             include '../../php/lib/UsuarioDAO.php';
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
-                
+
             } else if($usuario->cargo == 'analista'){
                 header('Location: ../analista/home.php');
             }
@@ -24,8 +24,9 @@ session_start();
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../../css/estilo.css" media="screen" />
         <link href="../../css/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
-   
+
 <body>
     <div id="login">
         <div class="container">
@@ -57,18 +58,18 @@ session_start();
                                     <br/>
                                     <br/>
                                     <label for="cargo" class="text-info">Cargo: </label>
-                                    <label for="cargo" class="text-info">Analista</label> 
+                                    <label for="cargo" class="text-info">Analista</label>
                                     <input type="radio" id="cargo" value="analista" required name="cargo"/>
                                     <label for="cargo" class="text-info">Administrador</label>
-                                    <input type="radio" id="cargo" value="administrador" required name="cargo"/>  
-                                    <br/>    
+                                    <input type="radio" id="cargo" value="administrador" required name="cargo"/>
+                                    <br/>
                                     <br/>
                                     <label for="status" class="text-info">Status: </label>
-                                    <label for="status" class="text-info">Ativo</label> 
+                                    <label for="status" class="text-info">Ativo</label>
                                     <input type="radio" id="status" value="ativo" required name="status"/>
                                     <label for="status" class="text-info">Inativo</label>
-                                    <input type="radio" id="status" value="inativo" required name="status"/>  
-                                    <br/>    
+                                    <input type="radio" id="status" value="inativo" required name="status"/>
+                                    <br/>
                                     <br/>
                                     <a href="#novo_usuario" style="text-decoration: none;"><input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Cadastrar"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
@@ -83,7 +84,7 @@ session_start();
     <script src="../../js/bootstrap.js"></script>
     <script src="../../js/jquery.js"></script>
     <script>
-    
+
         $(document).ready(function(){
             $('#novo_usuario').submit(function(e){
                 e.preventDefault(e);
@@ -94,15 +95,15 @@ session_start();
                     success: function(data){
                         $('#retornoformulario').html(data);
                         document.getElementById("novo_usuario").reset();
-                    } 
+                    }
                 });
-                
+
             });
-            
-            
+
+
         });
-        
-        
+
+
     </script>
 </body>
 

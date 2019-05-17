@@ -8,7 +8,7 @@ session_start();
             include '../../php/lib/UsuarioDAO.php';
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
-                
+
             } else if($usuario->cargo == 'analista'){
                 header('Location: ../analista/home.php');
             }
@@ -22,10 +22,11 @@ session_start();
     <head>
         <title>SCC</title>
         <meta charset="UTF-8">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="../../css/estilo.css" media="screen" />
+        <link rel="stylesheet" href="../../css/bootstrap.css">
     </head>
-   
+
 <body>
     <div id="login">
         <h2 class="text-center text-white pt-5">Sistema de Controle de Chamados</h2>
@@ -53,7 +54,8 @@ session_start();
             </div>
         </div>
     </div>
-    <script src="../../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
 </body>
 
 </html>
