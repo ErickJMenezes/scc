@@ -83,7 +83,8 @@ session_start();
                 echo "<td>".$usuario->nome."</td>";
                 echo "<td>".$chamados[$i]['status']."</td>";
                 echo "<td>".$chamados[$i]['data_abertura']."</td>";
-                echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
+                $ativo_loop = new AtivoDAO($chamados[$i]['ativo_linkado']);
+                echo "<td>".$ativo_loop->tombo."</td>";
                 echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Editar</a>"."<a href='acompanhamento.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Acompanhar</a>"."</td>";
               echo "</tr>";
             }
