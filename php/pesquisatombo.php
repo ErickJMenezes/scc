@@ -31,8 +31,8 @@ if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
     if($ativo->status == 'inativo'){
       header('Location: ../paginas/analista/home.php?e=2');
     } else {
-      echo $ativo->nome;
-      //continuar
+      echo '<div class="alert alert-success" role="alert">'.$ativo->nome.' '.$ativo->descricao.' '.$ativo->tombo.'</div>';
+      echo '<a href="../paginas/analista/home.php">Voltar</a>';
     }
   }
 
