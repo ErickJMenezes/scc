@@ -58,11 +58,10 @@ class AtivoDAO {
         $stm->bindParam(':tombo', $tombo);
         $stm->bindParam(':status', $status);
         $ret = $stm->execute();
-
         if($ret == 1){
             return 1;
         } else {
-            return -1;
+            return $ret;
         }
     }
 

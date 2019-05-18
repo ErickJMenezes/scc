@@ -8,8 +8,8 @@ if($_SESSION['auth'] == 'true'){
         include "lib/AtivoDAO.php";
 
         $nome = $_POST['nome'];
-        $descricao = $_POST['tombo'];
-        $tombo = $_POST['descricao'];
+        $descricao = $_POST['descricao'];
+        $tombo = $_POST['tombo'];
         $status = $_POST['status'];
 
         $resultado = AtivoDAO::create($nome, $descricao, $tombo, $status);
