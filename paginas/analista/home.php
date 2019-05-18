@@ -60,7 +60,7 @@ session_start();
           <thead class="thead-dark">
             <tr>
               <th>ID</th>
-              <th>título</th>
+              <th>Título</th>
               <th>Requerente</th>
               <th>Atribuido para</th>
               <th>Status</th>

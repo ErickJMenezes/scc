@@ -21,11 +21,11 @@ session_start();
 <html>
     <head>
         <title>SCC</title>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" type="text/css" href="../../css/estilo.css">
-        <link rel="stylesheet" href="../../css/menuadmin.css">
         <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/estilo.css" media="screen">
+        <link rel="stylesheet" href="../../css/menuadmin.css">
     </head>
 
 <body>
@@ -35,7 +35,7 @@ session_start();
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                            <h3 class="text-center text-info">ADM Home</h3>
+                            <h3 class="text-center text-info">Menu Administrador</h3>
                             <div class="form-group">
                                 <ul id="adm-menu">
                                     <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
