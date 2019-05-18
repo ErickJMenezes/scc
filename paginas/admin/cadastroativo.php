@@ -33,9 +33,9 @@ session_start();
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <div id="login-form" class="form">
-                            <h3 class="text-center text-info">Abrir Chamado</h3>
+                            <h3 class="text-center text-info">Cadastrar ativo</h3>
                             <div class="form-group">
-                                <form id="novo_ativo" class="form" method="POST">
+                                <form id="novo_ativo" class="form" method="get" action="../../php/cadastro_ativo.php">
                                     <h3 class="text-center text-info">Insira os dados abaixo:</h3>
                                     <br/>
                                     <div id="retornoformulario"></div>
@@ -48,7 +48,18 @@ session_start();
                                     <input type="text" id="tombo" required name="tombo" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <a href="#novo_ativo" style="text-decoration: none;"><input type="submit" name="cadastrar ativo" class="btn btn-info btn-md" value="Cadastrar Ativo"/></a>
+                                    <label for="descricao" class="text-info">Descrição:</label>
+                                    <input type="text" id="descricao" required name="descricao" class="form-control"/>
+                                    <br/>
+                                    <br/>
+                                    <label for="ativo" class="text-info">Status: </label>
+                                    <label for="cargo" class="text-info">Ativo</label>
+                                    <input type="radio" id="ativo" value="ativo" required name="status"/>
+                                    <label for="inativo" class="text-info">inativo</label>
+                                    <input type="radio" id="inativo" value="inativo" required name="status"/>
+                                    <br/>
+                                    <br/>
+                                    <a href="#novo_ativo" id="voltar_ao_topo" style="text-decoration: none;"><input onclick="$('#voltar_ao_topo').click();" type="submit" name="cadastrar ativo" class="btn btn-info btn-md" value="Cadastrar Ativo"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>
@@ -60,5 +71,27 @@ session_start();
     </div>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('#novo_ativo').submit(function(e){
+                e.preventDefault(e);
+                $.ajax({
+                    url: '../../php/cadastro_ativo.php',
+                    type: 'POST',
+                    data: $('#novo_ativo').serialize() ,
+                    success: function(data){
+                        $('#retornoformulario').html(data);
+                        document.getElementById("novo_ativo").reset();
+                    }
+                });
+
+            });
+
+
+        });
+
+
+    </script>
   </body>
 </html>
