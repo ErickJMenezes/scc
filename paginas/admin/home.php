@@ -23,7 +23,8 @@ session_start();
         <title>SCC</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" type="text/css" href="../../css/estilo.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/estilo.css">
+        <link rel="stylesheet" href="../../css/menuadmin.css">
         <link rel="stylesheet" href="../../css/bootstrap.css">
     </head>
 
@@ -34,21 +35,16 @@ session_start();
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="../../php/logout.php" method='POST'>
                             <h3 class="text-center text-info">ADM Home</h3>
                             <div class="form-group">
-                                <ul>
+                                <ul id="adm-menu">
                                     <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
                                     <li><a href="#">Editar usuario</a></li>
                                     <li><a href="cadastroativo.php">Cadastrar Novo Ativo</a></li>
                                     <li><a href="#">Editar ativo</a></li>
-                                    <form >
-                                      <input type="hidden" id="sair" name="sair" value="1">
-                                      <input type="submit" value="Sair">
-                                    </form>
+                                    <li><a href="../../php/logout.php">Sair</a></li>
                                 </ul>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
