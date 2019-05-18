@@ -44,10 +44,6 @@ session_start();
                                     <input type="text" id="nome" required name="nome" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="setor" class="text-info">Setor:</label>
-                                    <input type="text" id="setor" required name="setor" class="form-control"/>
-                                    <br/>
-                                    <br/>
                                     <label for="tombo" class="text-info">Tombo:</label>
                                     <input type="text" id="tombo" required name="tombo" class="form-control"/>
                                     <br/>
