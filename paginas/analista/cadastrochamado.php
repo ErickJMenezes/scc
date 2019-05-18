@@ -35,7 +35,7 @@ session_start();
                         <div id="login-form" class="form">
                             <h3 class="text-center text-info">Abrir Chamado</h3>
                             <div class="form-group">
-                                <form id="novo_chamado" class="form" method="POST">
+                                <form id="novo_chamado" class="form" method="POST" action="../../php/cadastrochamado.php">
                                     <h3 class="text-center text-info">Insira os dados abaixo:</h3>
                                     <br/>
                                     <div id="retornoformulario"></div>
@@ -45,7 +45,7 @@ session_start();
                                     <br/>
                                     <br/>
                                     <label for="descricao" class="text-info">Descrição:</label>
-                                    <input type="text" id="nome" required name="descricao" class="form-control"/>
+                                    <input type="text" id="descricao" required name="descricao" class="form-control"/>
                                     <br/>
                                     <br/>
                                     <label for="requerente" class="text-info">Nome do requerente:</label>
@@ -53,11 +53,13 @@ session_start();
                                     <br/>
                                     <br/>
                                     <!--Preencher com o nome do funcionário-->
-                                    <label for="funcionario" class="text-info">Funcionário atribuído:</label>
+                                    <label for="funcionario" class="text-info">Analista atribuído: <?php echo '<br>'.$usuario->nome ?></label>
+                                    <input type="text" id="analista" required readonly name="analista" class="form-control" value="<?php echo $usuario->getId(); ?>"/>
                                     <br/>
                                     <br/>
                                     <!--Preencher com o ativo-->
-                                    <label for="ativo" class="text-info">Ativo: </label>
+                                    <label for="ativo" class="text-info">Ativo(TOMBO): </label>
+                                    <input type="text" id="ativo" required name="ativo" class="form-control"/>
                                     <br/>
                                     <br/>
                                     <label for="status" class="text-info">Status: </label>
@@ -79,5 +81,27 @@ session_start();
     </div>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('#novo_chamado').submit(function(e){
+                e.preventDefault(e);
+                $.ajax({
+                    url: '../../php/cadastrochamado.php',
+                    type: 'POST',
+                    data: $('#novo_chamado').serialize() ,
+                    success: function(data){
+                        $('#retornoformulario').html(data);
+                        document.getElementById("novo_chamado").reset();
+                    }
+                });
+
+            });
+
+
+        });
+
+
+    </script>
   </body>
 </html>

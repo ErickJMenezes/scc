@@ -10,7 +10,7 @@ if($_SESSION['auth'] == 'true'){
 
 
     //Verifica se foram inseridos informações no formulário da página html
-    if(isset($_POST['titulo']) && isset($_POST['descricao']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
+    if(isset($_POST['titulo']) && isset($_POST['status']) && isset($_POST['descricao']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
 
 
         //Pega as informações do formulário
@@ -18,18 +18,26 @@ if($_SESSION['auth'] == 'true'){
         $descricao = $_POST['descricao'];
         $analista_atribuido = $_POST['analista'];
         $requerente = $_POST['requerente'];
-        $status = 'aberto';
-        $ativo = $_GET['ativo'];
+        $status = $_POST['status'];
+        $ativo = $_POST['ativo'];
 
-        // Cadastra o chamado no banco de dados
-        $chamado = ChamadoDAO::create($nome, $status, $requerente, $_GET['id'], $ativo);
-
-        //Verifica se foi cadastrado com sucesso
-        if($chamado == 1){
-            //header('Location: cadastrodechamados.php?e=0');  // mensagem de sucesso
+        if(AtivoDAO::getIdPeloTombo($ativo) === -1){
+          echo '<div class="alert alert-danger" role="alert">Tombo Inexistente, digite um tombo válido</div>';
         } else {
-            //header('Location: cadastrodechamados.php?e=2'); //mensagem de erro
+          // Cadastra o chamado no banco de dados
+          $chamado = ChamadoDAO::create($nome, $status, $requerente, $analista_atribuido, $ativo);
+
+          //Verifica se foi cadastrado com sucesso
+          if($chamado == 1){
+              //header('Location: cadastrodechamados.php?e=0');  // mensagem de sucesso
+              echo '<div class="alert alert-success" role="alert">Chamado aberto com sucesso!</div>';
+          } else {
+              //header('Location: cadastrodechamados.php?e=2'); //mensagem de erro
+              echo '<div class="alert alert-danger" role="alert">Erro ao cadastrar chamado.</div>';
+          }
         }
+
+
 
     } else {
 
