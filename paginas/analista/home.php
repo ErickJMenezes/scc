@@ -84,7 +84,7 @@ session_start();
                 echo "<td>".$chamados[$i]['status']."</td>";
                 echo "<td>".$chamados[$i]['data_abertura']."</td>";
                 echo "<td>".$chamados[$i]['ativo_linkado']."</td>";
-                echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Editar</a>"."</td>";
+                echo "<td>"."<a href='editarchamado.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Editar</a>"."<a href='acompanhamento.php?id=".$chamados[$i]['id']."' class='badge badge-dark'>Acompanhar</a>"."</td>";
               echo "</tr>";
             }
 

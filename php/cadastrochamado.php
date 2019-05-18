@@ -10,12 +10,11 @@ if($_SESSION['auth'] == 'true'){
 
 
     //Verifica se foram inseridos informações no formulário da página html
-    if(isset($_POST['titulo']) && isset($_POST['status']) && isset($_POST['descricao']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
+    if(isset($_POST['titulo']) && isset($_POST['status']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
 
 
         //Pega as informações do formulário
         $nome = $_POST['titulo'];
-        $descricao = $_POST['descricao'];
         $analista_atribuido = $_POST['analista'];
         $requerente = $_POST['requerente'];
         $status = $_POST['status'];

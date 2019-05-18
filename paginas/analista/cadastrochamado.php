@@ -44,10 +44,6 @@ session_start();
                                     <input type="text" id="id" required name="titulo" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="descricao" class="text-info">Descrição:</label>
-                                    <input type="text" id="descricao" required name="descricao" class="form-control"/>
-                                    <br/>
-                                    <br/>
                                     <label for="requerente" class="text-info">Nome do requerente:</label>
                                     <input type="text" id="requerente" required name="requerente" class="form-control"/>
                                     <br/>
