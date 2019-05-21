@@ -11,7 +11,7 @@ session_start();
               header('Location: ../admin/home.php');
             } else if($usuario->cargo == 'analista'){
               if(isset($_GET['id'])){
-
+                $chamado = new ChamadoDAO($_GET['id']);
               } else {
                 header('Location: ../index.php');
               }
@@ -26,7 +26,6 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Acompanhamento <?php
-    $chamado = new ChamadoDAO($_GET['id']);
     echo $chamado->nome; ?></title
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../css/bootstrap.css">
@@ -73,25 +72,32 @@ session_start();
           echo "<div id='container-acompanhamento'>\n<div class='acompanhamento'>\n<div class='acompanhamento-titulo'><h3><h3>".$usuario->nome."</h3></h3></div><h6>".$acompanhamentos[$i]['descricao']."</h6></div>";
         }
 
-         ?><div id="container-acompanhamento">
+         ?>
+         <div id="container-acompanhamento" style="<?php if($chamado->status == 'fechado'){echo "display: none";} else {echo "display: block;";}?>">
            <div class="acompanhamento">
              <div class="acompanhamento-titulo">
                <?php echo "<h3>".$usuario->nome."</h3>"; ?>
              </div>
                <h6>
                  <form id="formdesc" class="form" action="../../php/escreverchamado.php" method="post">
-                   <!-- <input type="text" id='fa' name="descricao" value=""> -->
                    <textarea name="descricao" form="formdesc" style="width: 100%; border-style: none; resize: none;" placeholder="Acompanhamento..." maxlength="100"></textarea>
                    <input type="text" name="usuario_id" hidden value="<?php echo $_SESSION['id']; ?>">
                    <input type="text" name="chamado_id" hidden value="<?php echo $_GET['id']; ?>">
                    <br>
-                   <input type="submit" class="btn btn-primary" name="" value="Escrever">
+                   <input type="submit" class="btn btn-primary" name="" value="Escrever"><br>
+                   <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="status" name="status">
+                    <label class="custom-control-label" for="status">Fechar chamado</label>
+                  </div>
                  </form>
                </h6>
            </div>
 
-    </div>
+         </div>
   </body>
   <script type="text/javascript" src="../../js/bootstrap.js"></script>
   <script type="text/javascript" src="../../js/jquery.js"></script>
+  <script type="text/javascript">
+
+  </script>
 </html>

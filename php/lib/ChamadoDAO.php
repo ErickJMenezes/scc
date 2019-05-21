@@ -50,8 +50,16 @@ class ChamadoDAO {
 
         $stm = $conexao->prepare($sql);
         $stm->bindParam(':nome', $this->nome);
-        $stm->bindParam('status', $this->status);
-        $stm->bindParam('requerente', $this->requerente);
+        $stm->bindParam(':status', $this->status);
+        $stm->bindParam(':requerente', $this->requerente);
+        $stm->bindParam(':id', $this->id);
+        $ret = $stm->execute();
+
+        if($ret == 1){
+          return $ret;
+        } else {
+          return -1;
+        }
 
     }
 

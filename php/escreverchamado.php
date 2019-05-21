@@ -6,16 +6,27 @@ if($_SESSION['auth'] == 'true'){
     if(isset($_POST['descricao']) && isset($_POST['usuario_id']) && isset($_POST['chamado_id'])){
 
         include_once "lib/AcompanhamentoDAO.php";
+        include_once 'lib/ChamadoDAO.php';
 
         $descricao = $_POST['descricao'];
-        $uid = $_POST['usuario_id'];
-        $cid = $_POST['chamado_id'];
+        $uid = $_POST['usuario_id']; //id do usuário
+        $cid = $_POST['chamado_id']; // id do chamado
+
+        $status = '';
+        if(isset($_POST['status'])){
+            $status = 'fechado';
+        } else{
+          $status = 'ativo';
+        }
 
         $resultado = AcompanhamentoDAO::create($descricao, $cid, $uid);
-        if($resultado == 1){
+        if($resultado == 1 && $status == 'ativo'){
             header('Location: ../paginas/analista/acompanhamento.php?id='.$_POST['chamado_id']);
-        } else {
-            header('Location: ../paginas/analista/acompanhamento.php?id='.$_POST['chamado_id']);
+        } else if ($resultado == 1 && $status == 'fechado') {
+          $chamado = new ChamadoDAO($cid);
+          $chamado->status = 'fechado';
+          $chamado->commit();
+          header('Location: ../paginas/analista/home.php');
         }
 
 
@@ -29,3 +40,4 @@ if($_SESSION['auth'] == 'true'){
     header('Location: ../paginas/index.php');
 
 }
+?>
