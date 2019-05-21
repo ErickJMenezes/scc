@@ -10,15 +10,15 @@ if($_SESSION['auth'] == 'true'){
 
 
     //Verifica se foram inseridos informações no formulário da página html
-    if(isset($_POST['titulo']) && isset($_POST['status']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
+    if(isset($_POST['titulo']) && isset($_POST['analista']) && isset($_POST['requerente']) && isset($_POST['ativo'])){
 
 
         //Pega as informações do formulário
         $nome = $_POST['titulo'];
         $analista_atribuido = $_POST['analista'];
         $requerente = $_POST['requerente'];
-        $status = $_POST['status'];
-        $ativo = 'ativo';
+        $status = 'ativo';
+        $ativo = $_POST['ativo'];
 
         if(AtivoDAO::getIdPeloTombo($ativo) === -1){
           echo '<div class="alert alert-danger" role="alert">Tombo Inexistente, digite um tombo válido</div>';
