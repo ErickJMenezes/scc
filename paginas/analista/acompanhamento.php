@@ -70,18 +70,26 @@ session_start();
         $acompanhamentos = AcompanhamentoDAO::getAllForChamado($_GET['id']);
 
         for($i = 0; $i < sizeof($acompanhamentos); $i++){
-          echo "<div id='container-acompanhamento'>\n<div class='acompanhamento'>\n<div class='acompanhamento-titulo'><h3>Acompanhamento</h3></div><h6>".$acompanhamentos[$i]['descricao']."</h6></div>";
+          echo "<div id='container-acompanhamento'>\n<div class='acompanhamento'>\n<div class='acompanhamento-titulo'><h3><h3>".$usuario->nome."</h3></h3></div><h6>".$acompanhamentos[$i]['descricao']."</h6></div>";
         }
 
-         ?>
-         <form class="form" action="../../php/escreverchamado.php" method="post">
-           <label for="fa">Acompanhamento</label>
-           <input type="text" id='fa' name="descricao" value="">
-           <input type="text" name="usuario_id" hidden value="<?php echo $_SESSION['id']; ?>">
-           <input type="text" name="chamado_id" hidden value="<?php echo $_GET['id']; ?>">
-           <br>
-           <input type="submit" name="" value="Escrever">
-         </form>
+         ?><div id="container-acompanhamento">
+           <div class="acompanhamento">
+             <div class="acompanhamento-titulo">
+               <?php echo "<h3>".$usuario->nome."</h3>"; ?>
+             </div>
+               <h6>
+                 <form id="formdesc" class="form" action="../../php/escreverchamado.php" method="post">
+                   <!-- <input type="text" id='fa' name="descricao" value=""> -->
+                   <textarea name="descricao" form="formdesc" style="width: 100%; border-style: none; resize: none;" placeholder="Acompanhamento..." maxlength="100"></textarea>
+                   <input type="text" name="usuario_id" hidden value="<?php echo $_SESSION['id']; ?>">
+                   <input type="text" name="chamado_id" hidden value="<?php echo $_GET['id']; ?>">
+                   <br>
+                   <input type="submit" class="btn btn-primary" name="" value="Escrever">
+                 </form>
+               </h6>
+           </div>
+
     </div>
   </body>
   <script type="text/javascript" src="../../js/bootstrap.js"></script>
