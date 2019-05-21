@@ -18,7 +18,7 @@ if($_SESSION['auth'] == 'true'){
         $analista_atribuido = $_POST['analista'];
         $requerente = $_POST['requerente'];
         $status = $_POST['status'];
-        $ativo = $_POST['ativo'];
+        $ativo = 'ativo';
 
         if(AtivoDAO::getIdPeloTombo($ativo) === -1){
           echo '<div class="alert alert-danger" role="alert">Tombo Inexistente, digite um tombo válido</div>';
