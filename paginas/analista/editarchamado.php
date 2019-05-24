@@ -64,7 +64,7 @@ session_start();
                                     <br/>
                                     <br/>
                                     <input type="text" name="id" value="<?php echo $_GET['id']; ?>" hidden>
-                                    <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Realizar Alterações"/></a>
+                                    <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Salvar Alterações"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>

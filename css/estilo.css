@@ -54,6 +54,7 @@ ul li:last-child {
   width: 1000px;
   height: auto;
   min-height: 600px;
+  overflow: auto;
   display: block;
   background-color: #EAEAEA;
 }
@@ -92,6 +93,7 @@ ul li:last-child {
   position: relative;
   margin: 0px;
   width: 750px;
+  height: auto;
   float: left;
 }
 
