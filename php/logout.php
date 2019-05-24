@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-$_SESSION['auth'] = 'false';
-$_SESSION['id'] = '';
+session_destroy();
 
 header('Location: ../paginas/index.php');
+?>
