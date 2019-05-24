@@ -39,3 +39,28 @@ if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
 } else {
   header('Location: ../paginas/analista/home.php');
 }
+?>
+
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SCC Analista</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/estilo.css" media="screen">
+  </head>
+<body>
+    <div id="ativo-pesquisado">
+        <table class="table table-bordered table-hover" style="text-align:center;">
+            <thead class="thead-dark">
+                <tr>
+                  <th>Nome do ativo</th>
+                  <th>Tombo</th>
+                  <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
