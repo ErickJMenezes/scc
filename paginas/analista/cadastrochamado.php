@@ -58,7 +58,7 @@ session_start();
                                     <input type="text" id="ativo" required name="ativo" class="form-control" placeholder="Digite o tombo do ativo"/>
                                     <br/>
                                     <br/>
-                                    <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Abrir Chamado"/></a>
+                                    <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Abrir novo Chamado"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>
