@@ -41,11 +41,11 @@ session_start();
                                     <div id="retornoformulario"></div>
                                     <br/>
                                     <label for="titulo" class="text-info">Título:</label>
-                                    <input type="text" id="id" required name="titulo" class="form-control"/>
+                                    <input type="text" id="id" required name="titulo" class="form-control" placeholder="Digite o título do chamado"/>
                                     <br/>
                                     <br/>
-                                    <label for="requerente" class="text-info">Nome do requerente:</label>
-                                    <input type="text" id="requerente" required name="requerente" class="form-control"/>
+                                    <label for="requerente" class="text-info">Requerente:</label>
+                                    <input type="text" id="requerente" required name="requerente" class="form-control" placeholder="Digite o nome do requerente"/>
                                     <br/>
                                     <br/>
                                     <!--Preencher com o nome do funcionário-->
@@ -55,7 +55,7 @@ session_start();
                                     <br/>
                                     <!--Preencher com o ativo-->
                                     <label for="ativo" class="text-info">Ativo(TOMBO): </label>
-                                    <input type="text" id="ativo" required name="ativo" class="form-control"/>
+                                    <input type="text" id="ativo" required name="ativo" class="form-control" placeholder="Digite o tombo do ativo"/>
                                     <br/>
                                     <br/>
                                     <a href="#abrir_chamado" style="text-decoration: none;"><input type="submit" name="abrir chamado" class="btn btn-info btn-md" value="Abrir Chamado"/></a>

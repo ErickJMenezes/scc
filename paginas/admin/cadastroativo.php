@@ -41,15 +41,15 @@ session_start();
                                     <div id="retornoformulario"></div>
                                     <br/>
                                     <label for="nome" class="text-info">Nome do ativo:</label>
-                                    <input type="text" id="nome" required name="nome" class="form-control"/>
+                                    <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do ativo"/>
                                     <br/>
                                     <br/>
                                     <label for="tombo" class="text-info">Tombo:</label>
-                                    <input type="text" id="tombo" required name="tombo" class="form-control"/>
+                                    <input type="text" id="tombo" required name="tombo" class="form-control" placeholder="Digite o tombo do ativo"/>
                                     <br/>
                                     <br/>
                                     <label for="descricao" class="text-info">Descrição:</label>
-                                    <input type="text" id="descricao" required name="descricao" class="form-control"/>
+                                    <input type="text" id="descricao" required name="descricao" class="form-control" placeholder="Marca, modelo, setor..."/>
                                     <br/>
                                     <br/>
                                     <label for="ativo" class="text-info">Status: </label>

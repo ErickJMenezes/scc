@@ -42,19 +42,19 @@ session_start();
                                     <div id="retornoformulario"></div>
                                     <br/>
                                     <label for="id" class="text-info">Login:</label>
-                                    <input type="text" id="id" required name="login" class="form-control"/>
+                                    <input type="text" id="id" required name="login" class="form-control" placeholder="Digite um login para o novo usuário"/>
                                     <br/>
                                     <br/>
                                     <label for="nome" class="text-info">Nome:</label>
-                                    <input type="text" id="nome" required name="nome" class="form-control"/>
+                                    <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do novo usuário"/>
                                     <br/>
                                     <br/>
                                     <label for="email" class="text-info">E-mail:</label>
-                                    <input type="email" id="email" required name="email" class="form-control"/>
+                                    <input type="email" id="email" required name="email" class="form-control" placeholder="Digite o e-mail do novo usuário"/>
                                     <br/>
                                     <br/>
                                     <label for="senha" class="text-info">Senha:</label>
-                                    <input type="password" id="senha" required name="senha" class="form-control"/>
+                                    <input type="password" id="senha" required name="senha" class="form-control" placeholder="Digite uma senha para o novo usuário"/>
                                     <br/>
                                     <br/>
                                     <label for="cargo" class="text-info">Cargo: </label>

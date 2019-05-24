@@ -34,11 +34,11 @@ session_start();
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Usuário:</label><br>
-                                <input type="text" id="usuario" class="form-control" required name="usuario">
+                                <input type="text" id="usuario" class="form-control" required name="usuario" placeholder="Digite seu login">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Senha:</label><br>
-                                <input type="password" id="senha" class="form-control" required name="senha">
+                                <input type="password" id="senha" class="form-control" required name="senha" placeholder="Digite sua senha">
                             </div>
                             <div class="form-group">
                                 <input type="submit" id="submit" name="login" class="btn btn-info btn-md" value="login">
