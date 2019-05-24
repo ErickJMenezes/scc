@@ -59,7 +59,7 @@ if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
                   <th>Descrição</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background: rgba(255,255,255,.8);">
                 <?php
                 echo "<tr>";
                 echo "  <td>$ativo->nome</td>";
@@ -69,6 +69,6 @@ if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
                 ?>
             </tbody>
         </table>
-        <a href="../.."></a>
+        <a href="home.php" class="btn btn-light">Voltar</a>
     </div>
 </body>
