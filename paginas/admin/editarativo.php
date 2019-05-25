@@ -37,11 +37,11 @@ session_start();
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+                                        <button class="btn btn-outline-secondary" id="btpesquisa">Pesquisar</button>
                                     </div>
-                                    <input type="text" class="form-control" name="tombo" placeholder="Digite o tombo do ativo" aria-label="" aria-describedby="basic-addon1" required>
+                                    <input id="campopesquisa" type="text" class="form-control" name="tombopesquisa" placeholder="Digite o tombo do ativo" aria-label="" aria-describedby="basic-addon1" required>
                                 </div>
-                                <form id="novo_ativo" class="form" method="get" action="../../php/cadastro_ativo.php">
+                                <form id="novo_ativo" class="form" method="get" action="../../php/atualizardadosativo.php">
                                 <br/>
                                     <div id="retornoformulario"></div>
                                     <br/>
@@ -76,27 +76,64 @@ session_start();
     </div>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
-    <script>
-
-        $(document).ready(function(){
-            $('#novo_ativo').submit(function(e){
-                e.preventDefault(e);
-                $.ajax({
-                    url: '../../php/cadastro_ativo.php',
-                    type: 'POST',
-                    data: $('#novo_ativo').serialize() ,
-                    success: function(data){
-                        $('#retornoformulario').html(data);
-                        document.getElementById("novo_ativo").reset();
-                    }
-                });
-
-            });
-
-
-        });
-
-
-    </script>
   </body>
+  <script>
+
+      $(document).ready(function(){
+          $('#novo_ativo').submit(function(e){
+              e.preventDefault(e);
+              $.ajax({
+                  url: '../../php/atualizardadosativo.php',
+                  type: 'POST',
+                  data: $('#novo_ativo').serialize() ,
+                  success: function(data){
+                      $('#retornoformulario').html(data);
+                      document.getElementById("novo_ativo").reset();
+                  }
+              });
+
+          });
+
+
+          $('#btpesquisa').click(function () {
+              $.ajax({
+                  url: '../../php/pesquisarativo.php',
+                  type: 'POST',
+                  data: $('#campopesquisa').serialize(),
+                  dataType: 'json',
+                  success: function (retorno) {
+
+                      if(retorno != -1 && retorno != null){
+                          var json = retorno;
+                          $('#nome').val(json.nome);
+                          $('#tombo').val(json.tombo);
+                          $('#descricao').val(json.descricao);
+                          if(json.status == 'ativo'){
+                              $('input:radio[value=ativo]').prop('checked', true);
+                          } else if(json.status == 'inativo'){
+                              $('input:radio[value=inativo]').prop('checked', true);
+                          }
+
+                      } else {
+                          var msg = 'ATIVO NÃO ENCONTRADO';
+                          $('#nome').val(msg);
+                          $('#tombo').val(msg);
+                          $('#descricao').val(msg);
+
+                      }
+
+
+
+
+                  }
+
+              });
+
+          });
+
+
+      });
+
+
+  </script>
 </html>

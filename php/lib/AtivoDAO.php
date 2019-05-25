@@ -38,6 +38,7 @@ class AtivoDAO {
         $stm->bindParam(':descricao', $this->descricao);
         $stm->bindParam(':tombo', $this->tombo);
         $stm->bindParam(':status', $this->status);
+        $stm->bindParam(':id', $this->id);
 
         $ret = $stm->execute();
 
@@ -73,7 +74,7 @@ class AtivoDAO {
         $ret = $stm->execute();
         if($ret == 1){
             $ativo = $stm->fetchAll(PDO::FETCH_ASSOC);
-            if(sizeof($ativo)>0){
+            if($ativo != null){
                 return $ativo[0]['id'];
             } else {
               return -1;

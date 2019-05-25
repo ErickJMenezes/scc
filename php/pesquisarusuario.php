@@ -3,7 +3,7 @@ session_start();
 if($_SESSION['auth'] == 'true'){
 
 } else {
-    header('Location: ../index.php');
+    header('Location: ../paginas/index.php');
 }
 include_once 'lib/UsuarioDAO.php';
 
