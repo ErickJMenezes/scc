@@ -118,6 +118,7 @@ session_start();
                             $('#id').val(msg);
                             $('#nome').val(msg);
                             $('#senha').val(msg);
+                            $('#campopesquisa').val('');
                         } else {
 
                             var json = JSON.parse(retorno);
