@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['auth'] == 'true'){
 
-    if(isset($_POST['nome']) && isset($_POST['tombo']) && isset($_POST['descricao']) && isset($_POST['status'])){
+    if(isset($_POST['nome']) && isset($_POST['tomold']) && isset($_POST['tombo']) && isset($_POST['descricao']) && isset($_POST['status'])){
 
         include_once "lib/AtivoDAO.php";
 
@@ -11,7 +11,7 @@ if($_SESSION['auth'] == 'true'){
         $descricao = $_POST['descricao'];
         $status = $_POST['status'];
 
-        $ativo = new AtivoDAO(AtivoDAO::getIdPeloTombo($tombo));
+        $ativo = new AtivoDAO(AtivoDAO::getIdPeloTombo($_POST['tomold']));
 
         $ativo->nome = $nome;
         $ativo->descricao = $descricao;

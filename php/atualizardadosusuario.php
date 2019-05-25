@@ -34,7 +34,7 @@ if($_SESSION['auth'] == 'true'){
         if($resultado == 1){
             echo '<div class="alert alert-success" role="alert">Alterações feitas com sucesso!</div>';
         } else {
-            echo '<div class="alert alert-danger" role="alert">Erro ao alterar informações do usuário'.$nome.'</div>';
+            echo '<div class="alert alert-danger" role="alert">Erro ao alterar informações do usuário '.$nome.'</div>';
         }
 
 
