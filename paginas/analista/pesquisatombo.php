@@ -6,11 +6,11 @@ session_start();
   */
   if(isset($_SESSION['auth'])){
       if($_SESSION['auth'] == 'true'){ //verifica se o usuário está autenticado
-          include_once 'lib/UsuarioDAO.php';
+          include_once '../../php/lib/UsuarioDAO.php';
           $usuario = new UsuarioDAO($_SESSION['id']);
           if($usuario->cargo == 'administrador'){
             //Manda para a home da sua página
-            header('Location: ../analista/home.php');
+            header('Location: home.php');
           } else if($usuario->cargo == 'analista'){
             //Não faz nada
           }
@@ -20,24 +20,24 @@ session_start();
   }
 
 if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
-  include_once 'lib/AtivoDAO.php';
+  include_once '../../php/lib/AtivoDAO.php';
 
   $tombo = $_POST['tombo'];
 
   $ativo = AtivoDAO::getAtivoPeloTombo($tombo);
   if(is_numeric($ativo)){
-    header('Location: ../paginas/analista/home.php?e=1');
+    header('Location: home.php?e=1');
   } else {
     if($ativo->status == 'inativo'){
-      header('Location: ../paginas/analista/home.php?e=2');
+      header('Location: home.php?e=2');
     } else {
-      echo '<div class="alert alert-success" role="alert">'.$ativo->nome.' '.$ativo->descricao.' '.$ativo->tombo.'</div>';
-      echo '<a href="../paginas/analista/home.php">Voltar</a>';
+      //echo '<div class="alert alert-success" role="alert">'.$ativo->nome.' '.$ativo->descricao.' '.$ativo->tombo.'</div>';
+      //echo '<a href="../paginas/analista/home.php">Voltar</a>';
     }
   }
 
 } else {
-  header('Location: ../paginas/analista/home.php');
+  header('Location: ../home.php');
 }
 ?>
 
@@ -59,8 +59,16 @@ if(isset($_POST['tombo']) and $_POST['tombo'] != ''){
                   <th>Descrição</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background: rgba(255,255,255,.8);">
+                <?php
+                echo "<tr>";
+                echo "  <td>$ativo->nome</td>";
+                echo "  <td>$ativo->tombo</td>";
+                echo "  <td>$ativo->descricao</td>";
+                echo "</tr>";
+                ?>
             </tbody>
         </table>
+        <a href="home.php" class="btn btn-light">Voltar</a>
     </div>
 </body>

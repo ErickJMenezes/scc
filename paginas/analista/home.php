@@ -9,7 +9,7 @@ session_start();
             $usuario = new UsuarioDAO($_SESSION['id']);
             if($usuario->cargo == 'administrador'){
               //Manda para a home da sua página
-              header('Location: ../analista/home.php');
+              header('Location: ../admin/home.php');
             } else if($usuario->cargo == 'analista'){
               //Não faz nada
             }
@@ -45,7 +45,7 @@ session_start();
                 }
             }
         ?>
-        <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="../../php/pesquisatombo.php" method="POST">
+        <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="pesquisatombo.php" method="POST">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
