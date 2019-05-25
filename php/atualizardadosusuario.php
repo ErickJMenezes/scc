@@ -3,7 +3,7 @@ session_start();
 
 if($_SESSION['auth'] == 'true'){
 
-    if(isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['status']) && isset($_POST['email']) && isset($_POST['cargo'])){
+    if(isset($_POST['nome'])  && isset($_POST['lold']) && isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['status']) && isset($_POST['email']) && isset($_POST['cargo'])){
 
         include_once "lib/UsuarioDAO.php";
 
@@ -15,7 +15,7 @@ if($_SESSION['auth'] == 'true'){
         $status = $_POST['status'];
 
 
-        $usuario = new UsuarioDAO(UsuarioDAO::getIdByLogin($login));
+        $usuario = new UsuarioDAO(UsuarioDAO::getIdByLogin($_POST['lold']));
 
         $usuario->nome = $nome;
         if($senha == ''){

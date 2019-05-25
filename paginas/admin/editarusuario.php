@@ -47,6 +47,7 @@ session_start();
                                     <br/>
                                     <label for="id" class="text-info">Login:</label>
                                     <input type="text" id="id" required name="login" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
+                                    <input type="text" id="lold" required name="lold" hidden class="form-control"/>
                                     <br/>
                                     <br/>
                                     <label for="nome" class="text-info">Nome:</label>
@@ -124,6 +125,7 @@ session_start();
                             var json = JSON.parse(retorno);
                             $('#email').val(json.email);
                             $('#id').val(json.login);
+                            $('#lold').val(json.login);
                             $('#nome').val(json.nome);
                             if(json.status == 'ativo'){
                                 $('input:radio[value=ativo]').prop('checked', true);
