@@ -5,7 +5,7 @@ if($_SESSION['auth'] == 'true'){
 
     if(isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['status']) && isset($_POST['email']) && isset($_POST['cargo'])){
 
-        include "lib/UsuarioDAO.php";
+        include_once "lib/UsuarioDAO.php";
 
         $nome = $_POST['nome'];
         $login = $_POST['login'];
@@ -14,11 +14,27 @@ if($_SESSION['auth'] == 'true'){
         $cargo = $_POST['cargo'];
         $status = $_POST['status'];
 
-        $resultado = UsuarioDAO::create($nome, $login, $senha, $email, $status, $cargo);
-        if($resultado == 1){
-            echo '<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>';
+
+        $usuario = new UsuarioDAO(UsuarioDAO::getIdByLogin($login));
+
+        $usuario->nome = $nome;
+        if($senha == ''){
+
         } else {
-            echo '<div class="alert alert-danger" role="alert">Erro ao cadastrar usuário.</div>';
+            $usuario->senha = $senha;
+        }
+        $usuario->email = $email;
+        $usuario->status = $status;
+        $usuario->cargo = $cargo;
+        $usuario->login = $login;
+
+
+        $resultado = $usuario->commit();
+
+        if($resultado == 1){
+            echo '<div class="alert alert-success" role="alert">Alterações feitas com sucesso!</div>';
+        } else {
+            echo '<div class="alert alert-danger" role="alert">Erro ao alterar informações do usuário'.$nome.'</div>';
         }
 
 

@@ -124,4 +124,22 @@ class UsuarioDAO {
 			return null;
 		}
 	}
+
+    /**
+     * @param $login
+     */
+    public static function getIdByLogin($login){
+	    $conexao = Conexao::getInstance();
+	    $sql = "SELECT id FROM `usuario` WHERE `login` = :login";
+	    $stmt = $conexao->prepare($sql);
+	    $stmt->bindParam(':login', $login);
+	    $ret = $stmt->execute();
+        $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($usuario == null){
+            return -1;
+        } else{
+            return $usuario[0]['id'];
+        }
+
+    }
 }

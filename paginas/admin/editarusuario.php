@@ -38,23 +38,27 @@ session_start();
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+                                        <button class="btn btn-outline-secondary" id="btpesquisa">Pesquisar</button>
                                     </div>
-                                    <input type="text" class="form-control" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
+                                    <input type="text" id="campopesquisa" class="form-control" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
                                 </div>
-                                <form id="novo_usuario" class="form" method="POST">
+                                <form id="novo_usuario" action="../../php/atualizardadosusuario.php" class="form" method="POST">
                                     <div id="retornoformulario"></div>
                                     <br/>
+                                    <label for="id" class="text-info">Login:</label>
+                                    <input type="text" id="id" required name="login" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
+                                    <br/>
+                                    <br/>
                                     <label for="nome" class="text-info">Nome:</label>
-                                    <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do novo usuário"/>
+                                    <input type="text" id="nome" required name="nome" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
                                     <label for="email" class="text-info">E-mail:</label>
-                                    <input type="email" id="email" required name="email" class="form-control" placeholder="Digite o e-mail do novo usuário"/>
+                                    <input type="email" id="email" required name="email" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
                                     <label for="senha" class="text-info">Senha:</label>
-                                    <input type="password" id="senha" required name="senha" class="form-control" placeholder="Digite uma senha para o novo usuário"/>
+                                    <input type="password" id="senha" name="senha" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
                                     <label for="cargo" class="text-info">Cargo: </label>
@@ -86,10 +90,11 @@ session_start();
     <script>
 
         $(document).ready(function(){
+
             $('#novo_usuario').submit(function(e){
                 e.preventDefault(e);
                 $.ajax({
-                    url: '../../php/cadastroanalista.php',
+                    url: '../../php/atualizardadosusuario.php',
                     type: 'POST',
                     data: $('#novo_usuario').serialize() ,
                     success: function(data){
@@ -100,6 +105,41 @@ session_start();
 
             });
 
+
+            $('#btpesquisa').click(function () {
+                $.ajax({
+                    url: '../../../php/pesquisarusuario.php',
+                    type: 'POST',
+                    data: $('#campopesquisa').serialize(),
+                    success: function (retorno) {
+                        if(retorno == -1){
+                            var msg = 'USUÁRIO INEXITENTE';
+                            $('#email').val(msg);
+                            $('#id').val(msg);
+                            $('#nome').val(msg);
+                            $('#senha').val(msg);
+                        } else {
+
+                            var json = JSON.parse(retorno);
+                            $('#email').val(json.email);
+                            $('#id').val(json.login);
+                            $('#nome').val(json.nome);
+                            if(json.status == 'ativo'){
+                                $('input:radio[value=ativo]').prop('checked', true);
+                            } else if(json.status == 'inativo'){
+                                $('input:radio[value=inativo]').prop('checked', true);
+                            }
+                            if(json.cargo == 'analista'){
+                                $('input:radio[value=analista]').prop('checked', true);
+                            } else if(json.cargo == 'administrador'){
+                                $('input:radio[value=administrador]').prop('checked', true);
+                            }
+                            $('#senha').prop('placeholder', 'Deixe em branco para manter a senha antiga');
+
+                        }
+                    }
+                })
+            })
 
         });
 
