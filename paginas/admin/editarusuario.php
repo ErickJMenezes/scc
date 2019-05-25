@@ -44,7 +44,7 @@ session_start();
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
                                             </div>
-                                            <input type="text" class="form-control" name="tombo" placeholder="Digite o tombo do ativo" aria-label="" aria-describedby="basic-addon1" required>
+                                            <input type="text" class="form-control" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
                                             </div>
                                     <br/>
                                     <label for="nome" class="text-info">Nome:</label>
