@@ -36,16 +36,14 @@ session_start();
                         <div id="login-form" class="form">
                             <h3 class="text-center text-info">Editar usuário</h3>
                             <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+                                    </div>
+                                    <input type="text" class="form-control" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
+                                </div>
                                 <form id="novo_usuario" class="form" method="POST">
-                                    <h3 class="text-center text-info">Pesquise o usuário pelo Login:</h3>
-                                    <br/>
                                     <div id="retornoformulario"></div>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
-                                            </div>
-                                            <input type="text" class="form-control" name="tombo" placeholder="Digite o tombo do ativo" aria-label="" aria-describedby="basic-addon1" required>
-                                            </div>
                                     <br/>
                                     <label for="nome" class="text-info">Nome:</label>
                                     <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do novo usuário"/>
