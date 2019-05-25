@@ -65,7 +65,7 @@ session_start();
                                     <input type="radio" id="inativo" value="inativo" required name="status"/>
                                     <br/>
                                     <br/>
-                                    <a href="#novo_ativo" id="voltar_ao_topo" style="text-decoration: none;"><input onclick="$('#voltar_ao_topo').click();" type="submit" name="cadastrar ativo" class="btn btn-info btn-md" value="Alterar informações"/></a>
+                                    <a href="#novo_ativo" id="voltar_ao_topo" style="text-decoration: none;"><input onclick="$('#voltar_ao_topo').click();" type="submit" name="cadastrar ativo" class="btn btn-info btn-md" value="Salvar Alteraçoões"/></a>
                                     <a href="home.php" style="text-decoration: none;">Voltar</a>
                                 </form>
                             </div>
