@@ -39,9 +39,9 @@ session_start();
                             <div class="form-group">
                                 <ul id="adm-menu">
                                     <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
-                                    <li><a href="#">Editar usuario</a></li>
+                                    <li><a href="editarusuario.php">Editar usuario</a></li>
                                     <li><a href="cadastroativo.php">Cadastrar Novo Ativo</a></li>
-                                    <li><a href="#">Editar ativo</a></li>
+                                    <li><a href="editarativo.php">Editar ativo</a></li>
                                     <li><a href="../../php/logout.php">Sair</a></li>
                                 </ul>
                             </div>
