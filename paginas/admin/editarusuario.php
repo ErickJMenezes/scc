@@ -38,9 +38,9 @@ session_start();
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary" id="btpesquisa">Pesquisar</button>
+                                        <button class="btn btn-outline-secondary flux-search-button" id="btpesquisa">Pesquisar</button>
                                     </div>
-                                    <input type="text" id="campopesquisa" class="form-control" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
+                                    <input type="text" id="campopesquisa" class="form-control flux-search-input" name="pesquisa" placeholder="Digite o Login do usuário" aria-label="" aria-describedby="basic-addon1" required>
                                 </div>
                                 <form id="novo_usuario" action="../../php/atualizardadosusuario.php" class="form" method="POST">
                                     <div id="retornoformulario"></div>
@@ -64,16 +64,16 @@ session_start();
                                     <br/>
                                     <label for="cargo" class="text-info">Cargo: </label>
                                     <label for="cargo" class="text-info">Analista</label>
-                                    <input type="radio" id="cargo" value="analista" required name="cargo"/>
+                                    <input type="radio" value="analista" required name="cargo"/>
                                     <label for="cargo" class="text-info">Administrador</label>
-                                    <input type="radio" id="cargo" value="administrador" required name="cargo"/>
+                                    <input type="radio" value="administrador" required name="cargo"/>
                                     <br/>
                                     <br/>
                                     <label for="status" class="text-info">Status: </label>
                                     <label for="status" class="text-info">Ativo</label>
-                                    <input type="radio" id="status" value="ativo" required name="status"/>
+                                    <input type="radio" value="ativo" required name="status"/>
                                     <label for="status" class="text-info">Inativo</label>
-                                    <input type="radio" id="status" value="inativo" required name="status"/>
+                                    <input type="radio" value="inativo" required name="status"/>
                                     <br/>
                                     <br/>
                                     <a href="#novo_usuario" style="text-decoration: none;"><input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Salvar Alterações"/></a>
@@ -88,66 +88,8 @@ session_start();
     </div>
     <script src="../../js/bootstrap.js"></script>
     <script src="../../js/jquery.js"></script>
-    <script>
-
-        $(document).ready(function(){
-
-            $('#novo_usuario').submit(function(e){
-                e.preventDefault(e);
-                $.ajax({
-                    url: '../../php/atualizardadosusuario.php',
-                    type: 'POST',
-                    data: $('#novo_usuario').serialize() ,
-                    success: function(data){
-                        $('#retornoformulario').html(data);
-                        document.getElementById("novo_usuario").reset();
-                    }
-                });
-
-            });
-
-
-            $('#btpesquisa').click(function () {
-                $.ajax({
-                    url: '../../../php/pesquisarusuario.php',
-                    type: 'POST',
-                    data: $('#campopesquisa').serialize(),
-                    success: function (retorno) {
-                        if(retorno == -1){
-                            var msg = 'USUÁRIO INEXITENTE';
-                            $('#email').val(msg);
-                            $('#id').val(msg);
-                            $('#nome').val(msg);
-                            $('#senha').val(msg);
-                            $('#campopesquisa').val('');
-                        } else {
-
-                            var json = JSON.parse(retorno);
-                            $('#email').val(json.email);
-                            $('#id').val(json.login);
-                            $('#lold').val(json.login);
-                            $('#nome').val(json.nome);
-                            if(json.status == 'ativo'){
-                                $('input:radio[value=ativo]').prop('checked', true);
-                            } else if(json.status == 'inativo'){
-                                $('input:radio[value=inativo]').prop('checked', true);
-                            }
-                            if(json.cargo == 'analista'){
-                                $('input:radio[value=analista]').prop('checked', true);
-                            } else if(json.cargo == 'administrador'){
-                                $('input:radio[value=administrador]').prop('checked', true);
-                            }
-                            $('#senha').prop('placeholder', 'Deixe em branco para manter a senha antiga');
-
-                        }
-                    }
-                })
-            })
-
-        });
-
-
-    </script>
+    <script src="../../js/ajax/ajx-edt-usr.js"></script>
+    <script src="../../js/flux.js"></script>
 </body>
 
 </html>
