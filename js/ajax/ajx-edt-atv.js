@@ -15,13 +15,13 @@ $(document).ready(function(){
 
 
     $('#btpesquisa').click(function () {
+
         $.ajax({
             url: '../../php/pesquisarativo.php',
             type: 'POST',
             data: $('#campopesquisa').serialize(),
             dataType: 'json',
             success: function (retorno) {
-
                 if(retorno != -1 && retorno != null){
                     var json = retorno;
                     $('#nome').val(json.nome);
@@ -41,9 +41,6 @@ $(document).ready(function(){
                     $('#descricao').val(msg);
 
                 }
-
-
-
 
             }
 
