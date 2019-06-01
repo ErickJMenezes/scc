@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     $('#btpesquisa').click(function () {
         $.ajax({
-            url: '../../../php/pesquisarusuario.php',
+            url: '../../php/pesquisarusuario.php',
             type: 'POST',
             data: $('#campopesquisa').serialize(),
             success: function (retorno) {

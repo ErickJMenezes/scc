@@ -19,6 +19,8 @@ session_start();
         } else {
             header('Location: ../index.php');
         }
+    } else {
+      header('Location: ../index.php');
     }
 ?>
 <!DOCTYPE html>
