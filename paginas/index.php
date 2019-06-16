@@ -22,6 +22,7 @@ session_start();
         <meta charset="UTF-8">
         <link href="../css/bootstrap.css" rel="stylesheet" id="bootstrap-css" >
         <link rel="stylesheet" type="text/css" href="../css/tela_login.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../css/fa/css/all.min.css" media="screen"/>
     </head>
 <body>
     <div id="login">
@@ -33,15 +34,15 @@ session_start();
                         <form id="login-form" class="form" action="../php/auth.php" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Usuário:</label><br>
+                                <label for="username" class="text-info"><i class="fas fa fa-user"></i> Usuário:</label><br>
                                 <input type="text" id="usuario" class="form-control" required name="usuario" placeholder="Digite seu login">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Senha:</label><br>
+                                <label for="password" class="text-info"><i class="fas fa fa-key"></i> Senha:</label><br>
                                 <input type="password" id="senha" class="form-control" required name="senha" placeholder="Digite sua senha">
                             </div>
                             <div class="form-group">
-                                <input type="submit" id="submit" name="login" class="btn btn-info btn-md" value="login">
+                                <button type="submit" id="submit" name="login" class="btn btn-info btn-md"><span class="fas fa fa-sign-in-alt"></span> Login</button>
                             </div>
                             <div class="form-group" id="retornoformulario">
                                 <?php

@@ -24,6 +24,3 @@ $('.flux-search-input').on("keypress", function (key) {
         $('#retornoformulario').children().fadeOut('slow', 'swing');
     }
 });
-
-
-

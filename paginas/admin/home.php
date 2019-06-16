@@ -26,6 +26,7 @@ session_start();
         <link rel="stylesheet" href="../../css/bootstrap.css">
         <link rel="stylesheet" href="../../css/estilo.css" media="screen">
         <link rel="stylesheet" href="../../css/menuadmin.css">
+        <link rel="stylesheet" type="text/css" href="../../css/fa/css/all.min.css" media="screen"/>
     </head>
 
 <body>
@@ -38,11 +39,11 @@ session_start();
                             <h3 class="text-center text-info">Menu Administrador</h3>
                             <div class="form-group">
                                 <ul id="adm-menu">
-                                    <li><a href="cadastrousuario.php">Cadastrar Novo Usuário</a></li>
-                                    <li><a href="editarusuario.php">Editar usuario</a></li>
-                                    <li><a href="cadastroativo.php">Cadastrar Novo Ativo</a></li>
-                                    <li><a href="editarativo.php">Editar ativo</a></li>
-                                    <li><a href="../../php/logout.php">Sair</a></li>
+                                    <li><a href="cadastrousuario.php"><i class="fas fa fa-user-plus"></i> Cadastrar Novo Usuário</a></li>
+                                    <li><a href="editarusuario.php"><i class="fas fa fa-user-edit"></i> Editar usuario</a></li>
+                                    <li><a href="cadastroativo.php"><i class="fas fa fa-plus-circle"></i> Cadastrar Novo Ativo</a></li>
+                                    <li><a href="editarativo.php"><i class="fas fa fa-edit"></i> Editar ativo</a></li>
+                                    <li><a href="../../php/logout.php"><i class="fas fa fa-door-open"></i> Sair</a></li>
                                 </ul>
                             </div>
                     </div>

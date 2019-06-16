@@ -25,6 +25,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="../../css/bootstrap.css">
         <link rel="stylesheet" href="../../css/estilo.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../../css/fa/css/all.min.css" media="screen"/>
     </head>
 
 <body>
@@ -41,38 +42,39 @@ session_start();
                                     <br/>
                                     <div id="retornoformulario"></div>
                                     <br/>
-                                    <label for="id" class="text-info">Login:</label>
+                                    <label for="id" class="text-info"><i class="fas fa fa-user-alt"></i> Login:</label>
                                     <input type="text" id="id" required name="login" class="form-control" placeholder="Digite um login para o novo usuário"/>
                                     <br/>
                                     <br/>
-                                    <label for="nome" class="text-info">Nome:</label>
+                                    <label for="nome" class="text-info"><i class="fas fa fa-signature"></i> Nome:</label>
                                     <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do novo usuário"/>
                                     <br/>
                                     <br/>
-                                    <label for="email" class="text-info">E-mail:</label>
+                                    <label for="email" class="text-info"><i class="fas fa fa-at"></i> E-mail:</label>
                                     <input type="email" id="email" required name="email" class="form-control" placeholder="Digite o e-mail do novo usuário"/>
                                     <br/>
                                     <br/>
-                                    <label for="senha" class="text-info">Senha:</label>
+                                    <label for="senha" class="text-info"><i class="fas fa fa-key"></i> Senha:</label>
                                     <input type="password" id="senha" required name="senha" class="form-control" placeholder="Digite uma senha para o novo usuário"/>
                                     <br/>
                                     <br/>
-                                    <label for="cargo" class="text-info">Cargo: </label>
+                                    <label for="cargo" class="text-info"><i class="fas fa fa-user-tag"></i> Cargo: </label><br>
                                     <label for="cargo" class="text-info">Analista</label>
                                     <input type="radio" id="cargo" value="analista" required name="cargo"/>
                                     <label for="cargo" class="text-info">Administrador</label>
                                     <input type="radio" id="cargo" value="administrador" required name="cargo"/>
                                     <br/>
                                     <br/>
-                                    <label for="status" class="text-info">Status: </label>
+                                    <label for="status" class="text-info"><i class="fas fa fa-toggle-on"></i> Status: </label><br>
                                     <label for="status" class="text-info">Ativo</label>
                                     <input type="radio" id="status" value="ativo" required name="status"/>
                                     <label for="status" class="text-info">Inativo</label>
                                     <input type="radio" id="status" value="inativo" required name="status"/>
                                     <br/>
                                     <br/>
-                                    <a href="#novo_usuario" style="text-decoration: none;"><input type="submit" name="cadastrar" class="btn btn-info btn-md" value="Cadastrar"/></a>
-                                    <a href="home.php" style="text-decoration: none;">Voltar</a>
+                                    
+                                    <a href="#retornoformulario" style="text-decoration: none;"><button class="btn btn-info btn-md" type="submit" name="cadastrar"><i class="fas fa fa-user-plus"></i> Cadastrar</button></a>
+                                    <a href="home.php" class="btn btn-primary" style="text-decoration: none;"><i class="fas fa fa-arrow-left"></i> Voltar</a>
                                 </form>
                             </div>
                         </div>
