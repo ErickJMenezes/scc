@@ -28,6 +28,7 @@ session_start();
     <title>SCC Analista</title>
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/fa/css/all.min.css" media="screen"/>
   </head>
   <body>
     <div id="principal">
@@ -50,7 +51,7 @@ session_start();
         <form id="pesquisatombo" class="barra-pesquisa-alinhar" action="pesquisatombo.php" method="POST">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+              <button class="btn btn-outline-secondary" type="submit"><i class="fas fa fa-search"></i> Pesquisar</button>
             </div>
             <input type="text" class="form-control" name="tombo" placeholder="Tombo" aria-label="" aria-describedby="basic-addon1" required>
           </div>
@@ -72,7 +73,7 @@ session_start();
             </tr>
           </thead>
           <tbody>
-
+            
             <?php
             include_once '../../php/lib/ChamadoDAO.php';
             $chamados = ChamadoDAO::getAllForUser($usuario->getId());
@@ -83,7 +84,14 @@ session_start();
                 echo "<td>".$chamados[$i]['nome']."</td>";
                 echo "<td>".$chamados[$i]['requerente']."</td>";
                 echo "<td>".$usuario->nome."</td>";
-                echo "<td>".$chamados[$i]['status']."</td>";
+                //echo "<td>".$chamados[$i]['status']."</td>";
+                echo "<td>";
+                if($chamados[$i]['status'] == 'aberto'){
+                  echo "<i class='fas fa fa-toggle-on'></i>aberto";
+                } else {
+                  echo "<i class='fas fa fa-toggle-off'></i>fechado";
+                }
+                echo "</td>";
                 echo "<td>".$chamados[$i]['data_abertura']."</td>";
                 $ativo_loop = new AtivoDAO($chamados[$i]['ativo_linkado']);
                 echo "<td>".$ativo_loop->tombo."</td>";

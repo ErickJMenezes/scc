@@ -24,6 +24,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/fa/css/all.min.css" media="screen"/>
     <title>SCC</title>
   </head>
   <body>
@@ -37,7 +38,7 @@ session_start();
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary flux-search-button" id="btpesquisa">Pesquisar</button>
+                                        <button class="btn btn-outline-secondary flux-search-button" id="btpesquisa"><i class="fas fa fa-search"></i> Pesquisar</button>
                                     </div>
                                     <input id="campopesquisa" type="text" class="form-control flux-search-input" name="tombopesquisa" placeholder="Digite o tombo do ativo" aria-label="" aria-describedby="basic-addon1" required>
                                 </div>
@@ -45,28 +46,28 @@ session_start();
                                 <br/>
                                     <div id="retornoformulario"></div>
                                     <br/>
-                                    <label for="nome" class="text-info">Nome do ativo:</label>
+                                    <label for="nome" class="text-info"><i class="fas fa fa-pen-square"></i> Nome do ativo:</label>
                                     <input type="text" id="nome" required name="nome" class="form-control" placeholder="Digite o nome do ativo"/>
                                     <br/>
                                     <br/>
-                                    <label for="tombo" class="text-info">Tombo:</label>
+                                    <label for="tombo" class="text-info"><i class="fas fa fa-fingerprint"></i> Tombo:</label>
                                     <input type="text" id="tombo" required name="tombo" class="form-control" placeholder="Digite o tombo do ativo"/>
                                     <input type="text" id="tomold" required hidden name="tomold" class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="descricao" class="text-info">Descrição:</label>
+                                    <label for="descricao" class="text-info"><i class="fas fa fa-file-signature"></i> Descrição:</label>
                                     <input type="text" id="descricao" required name="descricao" class="form-control" placeholder="Marca, modelo, setor..."/>
                                     <br/>
                                     <br/>
-                                    <label for="ativo" class="text-info">Status: </label>
+                                    <label for="ativo" class="text-info"><i class="fas fa fa-toggle-on"></i> Status: </label><br>
                                     <label for="cargo" class="text-info">Ativo</label>
                                     <input type="radio" id="ativo" value="ativo" required name="status"/>
                                     <label for="inativo" class="text-info">inativo</label>
                                     <input type="radio" id="inativo" value="inativo" required name="status"/>
                                     <br/>
                                     <br/>
-                                    <a href="#novo_ativo" id="voltar_ao_topo" style="text-decoration: none;"><input onclick="$('#voltar_ao_topo').click();" type="submit" name="cadastrar ativo" class="btn btn-info btn-md" value="Salvar Alteraçoões"/></a>
-                                    <a href="home.php" style="text-decoration: none;">Voltar</a>
+                                    <a href="#retornoformulario" id="voltar_ao_topo" style="text-decoration: none;"><button onclick="$('#voltar_ao_topo').click();" class="btn btn-info btn-md" type="submit" name="cadastrar"><i class="fas fa fa-save"></i> Salvar Alterações</button></a>
+                                    <a href="home.php" class="btn btn-primary" style="text-decoration: none;"><i class="fas fa fa-arrow-left"></i> Voltar</a>
                                 </form>
                             </div>
                         </div>

@@ -36,14 +36,15 @@ session_start();
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                            <h3 class="text-center text-info">Menu Administrador</h3>
+                            
+                            <h3 class="text-center text-info"><span class="fas fa fa-user-cog"></span> Menu Administrador</h3>
                             <div class="form-group">
                                 <ul id="adm-menu">
-                                    <li><a href="cadastrousuario.php"><i class="fas fa fa-user-plus"></i> Cadastrar Novo Usuário</a></li>
-                                    <li><a href="editarusuario.php"><i class="fas fa fa-user-edit"></i> Editar usuario</a></li>
-                                    <li><a href="cadastroativo.php"><i class="fas fa fa-plus-circle"></i> Cadastrar Novo Ativo</a></li>
-                                    <li><a href="editarativo.php"><i class="fas fa fa-edit"></i> Editar ativo</a></li>
-                                    <li><a href="../../php/logout.php"><i class="fas fa fa-door-open"></i> Sair</a></li>
+                                    <li><a href="cadastrousuario.php"><i class="fas fa fa-user-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar Novo Usuário</a></li>
+                                    <li><a href="editarusuario.php"><i class="fas fa fa-user-edit"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Editar usuario</a></li>
+                                    <li><a href="cadastroativo.php"><i class="fas fa fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar Novo Ativo</a></li>
+                                    <li><a href="editarativo.php"><i class="fas fa fa-edit"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Editar ativo</a></li>
+                                    <li><a href="../../php/logout.php"><i class="fas fa fa-door-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sair</a></li>
                                 </ul>
                             </div>
                     </div>
