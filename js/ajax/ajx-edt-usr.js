@@ -35,6 +35,7 @@ $(document).ready(function(){
                     $('#id').val(json.login);
                     $('#lold').val(json.login);
                     $('#nome').val(json.nome);
+                    $('#senha').val('');
                     if(json.status == 'ativo'){
                         $('input:radio[value=ativo]').prop('checked', true);
                     } else if(json.status == 'inativo'){
