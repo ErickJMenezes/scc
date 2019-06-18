@@ -48,20 +48,20 @@ session_start();
                                 <form id="novo_usuario" action="../../php/atualizardadosusuario.php" class="form" method="POST">
                                     <div id="retornoformulario"></div>
                                     <br/>
-                                    <label for="id" class="text-info"><i class="fas fa fa-edit"></i> Login:</label>
+                                    <label for="id" class="text-info"><i class="fas fa fa-user"></i> Login:</label>
                                     <input type="text" id="id" required name="login" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <input type="text" id="lold" required name="lold" hidden class="form-control"/>
                                     <br/>
                                     <br/>
-                                    <label for="nome" class="text-info"><i class="fas fa fa-edit"></i> Nome:</label>
+                                    <label for="nome" class="text-info"><i class="fas fa fa-signature"></i> Nome:</label>
                                     <input type="text" id="nome" required name="nome" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
-                                    <label for="email" class="text-info"><i class="fas fa fa-edit"></i> E-mail:</label>
+                                    <label for="email" class="text-info"><i class="fas fa fa-at"></i> E-mail:</label>
                                     <input type="email" id="email" required name="email" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
-                                    <label for="senha" class="text-info"><i class="fas fa fa-edit"></i> Senha:</label>
+                                    <label for="senha" class="text-info"><i class="fas fa fa-key"></i> Senha:</label>
                                     <input type="password" id="senha" name="senha" class="form-control" placeholder="Pesquise um usuário para alterar os dados"/>
                                     <br/>
                                     <br/>
